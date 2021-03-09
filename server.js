@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+const mongoose = require("mongoose");
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -12,6 +13,11 @@ if (process.env.NODE_ENV === "production") {
 // Define any API routes before this runs
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/worryMonster", {
+  useNewUrlParser: true,
+  useFindAndModify: false
 });
 
 app.listen(PORT, function() {
