@@ -1,6 +1,8 @@
 import React from "react";
 import { useAuthTokenStore } from "./utils/auth";
 import RegistrationForm from "./components/RegistrationForm";
+import LoginForm from "./components/LoginForm";
+import LogoutButton from "./components/LogoutButton";
 
 import "./App.css";
 
@@ -16,6 +18,9 @@ function App() {
 
 
         <RegistrationForm />
+        <LoginForm />
+        <LogoutButton />
+        
       </div>
     </div>
 
