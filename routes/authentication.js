@@ -105,6 +105,7 @@ router.post("/register", validateBodyWith( registerValidator ), async (req, res)
 
     const newUser = new User({
       email,
+      
       password: await passwordHash( password )
     });
 
