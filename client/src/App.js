@@ -1,15 +1,20 @@
 import React from "react";
-import { useAuthTokenStore } from "./utils/auth";
+import { useAuthTokenStore, useIsAuthenticated } from "./utils/auth";
 import RegistrationForm from "./components/RegistrationForm";
 import LoginForm from "./components/LoginForm";
 import LogoutButton from "./components/LogoutButton";
+import { BrowserRouter} from "react-router-dom";
+
 
 import "./App.css";
 
 function App() {
   useAuthTokenStore();
 
+  const isAuthenticated = useIsAuthenticated();
+
   return (
+    <BrowserRouter>
     <div className="App">
       <div className="App-header">
         <h2>Worry Monster</h2>
@@ -17,12 +22,13 @@ function App() {
       <div>
 
 
-        <RegistrationForm />
-        <LoginForm />
-        <LogoutButton />
+       {!isAuthenticated &&  <RegistrationForm />}
+       {!isAuthenticated &&<LoginForm />}
+       {isAuthenticated &&<LogoutButton />}
         
       </div>
     </div>
+    </BrowserRouter>
 
   );
 }
