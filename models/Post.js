@@ -4,7 +4,12 @@ const Schema = mongoose.Schema;
 const postSchema = new Schema({
   city: { type: String, required: true },
   body: String,
-  date: { type: Date, default: Date.now }
+  date: { type: Date, default: Date.now },
+  user: {	  
+      type: Schema.Types.ObjectId,	    
+      ref: 'users',	    
+    },
+   share: { type: Boolean, default: false }
 });
 
 const Post = mongoose.model("Post", postSchema);
