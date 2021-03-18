@@ -12,6 +12,6 @@ const postSchema = new Schema({
    share: { type: Boolean, default: false }
 });
 
-const Post = mongoose.model("Post", postSchema);
+const Posts = mongoose.model("Posts", postSchema);
 
-module.exports = Post;
+module.exports = Posts;
