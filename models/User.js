@@ -14,7 +14,13 @@ const UserSchema = new Schema({
   username: {
     type: String,
     required: true
-  }
+  },
+  Post: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Post',
+    },
+  ],
 });
 
 module.exports = User = mongoose.model("users", UserSchema);

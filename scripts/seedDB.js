@@ -5,6 +5,18 @@ const db = require("../models");
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/worryMonster");
 
+
+const userSeeds = [
+  {
+    email: "bob@gmail.com",
+    password: "$2a$10$WttW6zQLdoUe8leQ5C.lgeBBw5CFUHjOvA9bXGB5tVQdaYFgw3qoG"
+  },
+  {
+    email: "john@gmail.com",
+    password: "$2a$10$WttW6zQLdoUe8leQ5C.lgeBBw5CFUHjOvA9bXGB5tVQdaYFgw3qoG"
+  }
+];
+
 const worrySeed = [
   {
     city: "Seattle",
@@ -27,7 +39,7 @@ const worrySeed = [
 ];
 
 db.Post.remove({})
-  .then(() => db.Post.collection.insertMany(worrySeed))
+  .then(() => db.Post.collection.insertMany({worrySeed, userSeeds}))
   .then(data => {
     console.log(data.result.n + " worries inserted!");
     process.exit(0);
