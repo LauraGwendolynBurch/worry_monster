@@ -15,12 +15,18 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  Post: [
+  Posts: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Post',
+      ref: 'Posts',
     },
   ],
-});
+},
+{
+  usePushEach: true,
+}
+);
 
-module.exports = User = mongoose.model("users", UserSchema);
+const User = mongoose.model("users", UserSchema);
+
+module.exports = User;

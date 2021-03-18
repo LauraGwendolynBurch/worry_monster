@@ -21,6 +21,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use("/api", require("./routes/authentication"));
+app.use(require("./routes/api/posts"))
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function (req, res) {
@@ -32,5 +33,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/worryMonster");
 app.listen(PORT, function () {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
+
 
 // Test for push
