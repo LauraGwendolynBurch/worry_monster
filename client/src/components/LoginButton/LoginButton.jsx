@@ -1,6 +1,10 @@
 import React from "react";
+import { useLogin, useLogout } from "../../utils/auth";
+import styles from "./LoginButton.module.css";
 
-const LoginButton = (props) => {
+const LoginButton = ({ user }) => {
+	const login = useLogin();
+	const logout = useLogout();
 	return (
 		<>
 			{/* {user ? (
@@ -12,7 +16,16 @@ const LoginButton = (props) => {
 					login
 				</button>
 			)} */}
-			<button className="btn-logout"> logout</button>
+			{user ? (
+				<button className="btn-logout" onClick={logout}>
+					LOGOUT
+				</button>
+			) : (
+				<button className="btn-login" onClick={login}>
+					LOGIN
+				</button>
+			)}
+			{/* <button className="btn-logout"> logout</button> */}
 		</>
 	);
 };

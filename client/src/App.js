@@ -5,7 +5,7 @@ import LoginForm from "./components/LoginForm";
 import LogoutButton from "./components/LogoutButton";
 import { BrowserRouter } from "react-router-dom";
 
-import "./App.css";
+import "./App.module.css";
 import Main from "./pages/Main";
 
 function App() {
@@ -16,13 +16,15 @@ function App() {
 	return (
 		<BrowserRouter>
 			<div className="App">
-				<Main></Main>
+				{/* <Main></Main> */}
 				{/* <div className="App-header">
 					<h2>Worry Monster</h2>
 				</div> */}
 				<div>
-					{!isAuthenticated && <RegistrationForm />}
-					{!isAuthenticated && <LoginForm />}
+					{/* {!isAuthenticated && <RegistrationForm />} */}
+					{!isAuthenticated && <Main />}
+
+					{/* {!isAuthenticated && <LoginForm />} */}
 					{isAuthenticated && <LogoutButton />}
 				</div>
 			</div>

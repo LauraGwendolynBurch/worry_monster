@@ -1,0 +1,12 @@
+.footer {
+	height: 8rem;
+	background-color: #1e243d;
+	color: #fff;
+	padding: 2rem;
+	/* box-sizing: border-box; */
+}
+.info {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
