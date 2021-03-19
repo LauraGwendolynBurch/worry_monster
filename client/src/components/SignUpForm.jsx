@@ -1,6 +1,6 @@
 import React from "react";
 
-const SignUpFrom = ({ styles, emailRef, passwordRef, emailJoin }) => {
+const SignUpForm = ({ styles, usernameRef, emailRef, passwordRef, emailJoin }) => {
 	return (
 		<div className={`${styles.memberbox} ${styles.join}`}>
 			<form>
@@ -9,7 +9,7 @@ const SignUpFrom = ({ styles, emailRef, passwordRef, emailJoin }) => {
 					username
 				</label>
 				<input
-					ref={userRef}
+					ref={usernameRef}
 					type="text"
 					placeholder="Enter username"
 					id="userName"
@@ -33,4 +33,4 @@ const SignUpFrom = ({ styles, emailRef, passwordRef, emailJoin }) => {
 	);
 };
 
-export default SignUpFrom;
+export default SignUpForm;

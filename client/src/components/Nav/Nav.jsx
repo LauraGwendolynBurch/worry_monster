@@ -3,8 +3,7 @@ import styles from "./Nav.module.css";
 import { Link } from "react-router-dom";
 import LoginButton from "../LoginButton/LoginButton";
 
-
-const Nav = (props) => {
+const Nav = ({ setLoginModal, user }) => {
 	return (
 		<header className={styles.nav}>
 			<div className="wrapInner">
@@ -13,7 +12,7 @@ const Nav = (props) => {
 						<img src="" alt="worrymonster logo" />
 					</Link>
 				</h1>
-				<LoginButton/>
+				<LoginButton setLoginModal={setLoginModal} user={user} />
 			</div>
 		</header>
 	);

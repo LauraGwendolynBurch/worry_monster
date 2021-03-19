@@ -1,13 +1,20 @@
 import React from "react";
 
-const LoginForm = ({ styles, emailRef, passwordRef, emaillogin, setJoin }) => {
+const LoginForm = ({
+	styles,
+	emailRef,
+	passwordRef,
+	handleSubmit,
+	setJoin,
+}) => {
+
 	const onChangeJoin = (event) => {
 		event.preventDefault();
 		setJoin(() => true);
 	};
 	return (
 		<div className={styles.memberBox}>
-			<form>
+			<form onSubmit={handleSubmit}>
 				<h2>LOG IN</h2>
 				<input
 					ref={emailRef}
@@ -15,7 +22,7 @@ const LoginForm = ({ styles, emailRef, passwordRef, emaillogin, setJoin }) => {
 					placeholder="enter your email"
 				></input>
 				<input ref={passwordRef} type="password" placeholder="password" />
-				<button onClick={emaillogin}>LOG IN</button>
+				<button onClick={handleSubmit}>LOG IN</button>
 				<button onClick={onChangeJoin}>SIGN UP</button>
 			</form>
 		</div>

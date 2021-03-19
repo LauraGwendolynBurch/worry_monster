@@ -1,5 +1,9 @@
-import React from "react";
-import { useAuthTokenStore, useIsAuthenticated } from "./utils/auth";
+import React, { useState } from "react";
+import {
+	useAuthenticatedUser,
+	useAuthTokenStore,
+	useIsAuthenticated,
+} from "./utils/auth";
 import RegistrationForm from "./components/RegistrationForm";
 import LoginForm from "./components/LoginForm";
 import LogoutButton from "./components/LogoutButton";
@@ -7,11 +11,16 @@ import { BrowserRouter } from "react-router-dom";
 
 import "./App.module.css";
 import Main from "./pages/Main";
+import ModalContainer from "./components/ModalContainer";
 
 function App() {
 	useAuthTokenStore();
 
 	const isAuthenticated = useIsAuthenticated();
+	const authenticatedUser = useAuthenticatedUser();
+	const [loginModal, setLoginModal] = useState(false);
+	const [user, setUser] = useState(null);
+	
 
 	return (
 		<BrowserRouter>
@@ -22,11 +31,12 @@ function App() {
 				</div> */}
 				<div>
 					{/* {!isAuthenticated && <RegistrationForm />} */}
-					{!isAuthenticated && <Main />}
+					{!isAuthenticated && <Main setLoginModal={setLoginModal} />}
 
 					{/* {!isAuthenticated && <LoginForm />} */}
 					{isAuthenticated && <LogoutButton />}
 				</div>
+				{loginModal && <ModalContainer setLoginModal={setLoginModal} />}
 			</div>
 		</BrowserRouter>
 	);
