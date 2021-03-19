@@ -72,6 +72,7 @@ router.post("/login", validateBodyWith( loginValidator ), async (req, res) => {
       }
     );
 
+console.log("token: ", token )
     return res.json({
       success: true,
       token: "Bearer " + token,
