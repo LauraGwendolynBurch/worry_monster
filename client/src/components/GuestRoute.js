@@ -1,7 +1,8 @@
+import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { useIsAuthenticated } from "../utils/auth";
 
-const PrivateRoute = ({
+const GuestRoute = ({
 	component: Component,
 	children,
 	redirectTo = "/",
@@ -9,18 +10,16 @@ const PrivateRoute = ({
 }) => {
 	const isAuth = useIsAuthenticated();
 
-	const render = () =>
+	const render = ({ location }) =>
 		isAuth ? (
-			Component ? (
-				<Component />
-			) : (
-				children
-			)
-		) : (
 			<Redirect to={{ pathname: redirectTo, state: { from: location } }} />
+		) : Component ? (
+			<Component />
+		) : (
+			children
 		);
 
 	return <Route {...props} render={render} />;
 };
 
-export default PrivateRoute;
+export default GuestRoute;

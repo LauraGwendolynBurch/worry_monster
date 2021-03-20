@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 
 import { useLogin } from "../utils/auth";
 
-function LoginForm() {
+function LoginForm({ closeModal, history }) {
 	const emailRef = useRef();
 	const passwordRef = useRef();
 

@@ -7,60 +7,60 @@ import SignUpForm from "../SignUpForm";
 import LoginForm from "../LoginForm";
 
 const MemberModalBox = ({ closeModal, history }) => {
-	const emailRef = useRef();
-	const passwordRef = useRef();
-	const usernameRef = useRef();
+	// const emailRef = useRef();
+	// const passwordRef = useRef();
+	// const usernameRef = useRef();
 
 	const [isJoin, setJoin] = useState(false);
 
-	// Get the helper login function from the `useLogin` hook.
-	const login = useLogin();
+	// // Get the helper login function from the `useLogin` hook.
+	// const login = useLogin();
 
-	const emailJoin = async (event) => {
-		event.preventDefault();
-		const username = usernameRef.current.value;
-		const email = emailRef.current.value;
-		const password = passwordRef.current.value;
-		console.log(email, password, username);
-		try {
-			// Register the user.
-			await API.register({ email, password, username });
+	// const emailJoin = async (event) => {
+	// 	event.preventDefault();
+	// 	const username = usernameRef.current.value;
+	// 	const email = emailRef.current.value;
+	// 	const password = passwordRef.current.value;
+	// 	console.log(email, password, username);
+	// 	try {
+	// 		// Register the user.
+	// 		await API.register({ email, password, username });
 
-			// User has been successfully registered, now log them in with the same information.
-			await login({ email, password });
+	// 		// User has been successfully registered, now log them in with the same information.
+	// 		await login({ email, password });
 
-			// User has been successfully registered, logged in and added to state. Perform any additional actions you need here such as redirecting to a new page.
+	// 		// User has been successfully registered, logged in and added to state. Perform any additional actions you need here such as redirecting to a new page.
 
-			closeModal();
-			history.push("/Worry");
-		} catch (err) {
-			// Handle error responses from the API. This will include
-			if (err.response && err.response.data) {
-				console.log(err.response.data);
-			} else {
-				console.log(err);
-			}
-		}
-	};
+	// 		closeModal();
+	// 		history.push("/Worry");
+	// 	} catch (err) {
+	// 		// Handle error responses from the API. This will include
+	// 		if (err.response && err.response.data) {
+	// 			console.log(err.response.data);
+	// 		} else {
+	// 			console.log(err);
+	// 		}
+	// 	}
+	// };
 
-	const emailLogin = async (e) => {
-		e.preventDefault();
+	// const emailLogin = async (e) => {
+	// 	e.preventDefault();
 
-		const email = emailRef.current.value;
-		const password = passwordRef.current.value;
+	// 	const email = emailRef.current.value;
+	// 	const password = passwordRef.current.value;
 
-		try {
-			await login({ email, password });
+	// 	try {
+	// 		await login({ email, password });
 
-			// User has been successfully logged in and added to state. Perform any additional actions you need here such as redirecting to a new page.
+	// 		// User has been successfully logged in and added to state. Perform any additional actions you need here such as redirecting to a new page.
 
-			closeModal();
-			history.push("/Worry");
-		} catch (err) {
-			// Handle error responses from the API
-			if (err.response && err.response.data) console.log(err.response.data);
-		}
-	};
+	// 		closeModal();
+	// 		history.push("/Worry");
+	// 	} catch (err) {
+	// 		// Handle error responses from the API
+	// 		if (err.response && err.response.data) console.log(err.response.data);
+	// 	}
+	// };
 
 	const handlebackground = (event) => {
 		if (!event.target.dataset.background) {
@@ -82,18 +82,20 @@ const MemberModalBox = ({ closeModal, history }) => {
 				{isJoin ? (
 					<SignUpForm
 						styles={styles}
-						username={usernameRef}
-						email={emailRef}
+						// username={usernameRef}
+						// email={emailRef}
 						// handleSubmit={handleSubmit}
-						emailJoin={emailJoin}
+						// onSubmit={emailJoin}
+						history={history}
 					/>
 				) : (
 					<LoginForm
 						styles={styles}
-						username={usernameRef}
-						email={emailRef}
-						emailLogin={emailLogin}
+						// username={usernameRef}
+						// email={emailRef}
+						// onSubmit={emailLogin}
 						setJoin={setJoin}
+						history={history}
 					/>
 				)}
 				<button className={styles.btnClose} onClick={closeModal}>
