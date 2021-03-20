@@ -10,7 +10,7 @@ const Nav = ({ setLoginModal, user }) => {
 			<div className="wrapInner">
 				<h1>
 					<Link to="/">
-						<img src={Shape1} alt="worrymonster logo" />
+						<img className={styles.logo} src={Shape1} alt="worrymonster logo" />
 					</Link>
 					<span>worry monster</span>
 				</h1>

@@ -1,5 +1,5 @@
 import { GlowParticle } from "./glowparticles.js";
-// const GlowParticle = require("./glowparticles");
+
 
 const COLORS = [
 	{ r: 45, g: 74, b: 227 }, //blue
