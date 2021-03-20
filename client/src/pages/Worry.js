@@ -1,7 +1,13 @@
 import React from "react";
+import styles from "./Worry.module.css";
+import HeaderContainer from "../components/HeaderContainer";
 
 const Worry = (props) => {
-	return <h1>worry page</h1>;
+	return (
+		<section>
+			<HeaderContainer />
+		</section>
+	);
 };
 
 export default Worry;

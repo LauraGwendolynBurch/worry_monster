@@ -13,3 +13,9 @@
 	align-items: center;
 	justify-content: space-between;
 }
+
+img {
+	width: 3rem;
+	height: 3rem;
+	transform: translateY(15px);
+}

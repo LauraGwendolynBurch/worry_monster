@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Nav.module.css";
 import { Link } from "react-router-dom";
 import LoginButton from "../LoginButton/LoginButton";
+import Shape1 from "../../images/Shape1.svg";
 
 const Nav = ({ setLoginModal, user }) => {
 	return (
@@ -9,8 +10,9 @@ const Nav = ({ setLoginModal, user }) => {
 			<div className="wrapInner">
 				<h1>
 					<Link to="/">
-						<img src="" alt="worrymonster logo" />
+						<img src={Shape1} alt="worrymonster logo" />
 					</Link>
+					<span>worry monster</span>
 				</h1>
 				<LoginButton setLoginModal={setLoginModal} user={user} />
 			</div>
