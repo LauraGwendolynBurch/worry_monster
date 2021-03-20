@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import API from "../utils/API";
 import { useLogin } from "../utils/auth";
 
-function RegistrationForm() {
+const SignUpForm = ({ styles, closeModal, history }) => {
 	const emailRef = useRef();
 	const passwordRef = useRef();
 	const usernameRef = useRef();
@@ -24,6 +24,8 @@ function RegistrationForm() {
 
 			// User has been successfully registered, now log them in with the same information.
 			await login({ email, password });
+			closeModal();
+			history.push("/Worry");
 
 			// User has been successfully registered, logged in and added to state. Perform any additional actions you need here such as redirecting to a new page.
 		} catch (err) {
@@ -37,17 +39,33 @@ function RegistrationForm() {
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
-			<h2>Register</h2>
-			<input type="text" ref={usernameRef} placeholder="Your username" />
-			<br />
-			<input type="text" ref={emailRef} placeholder="Your email" />
-			<br />
-			<input type="password" ref={passwordRef} placeholder="Your password" />
-			<br />
-			<button>Submit</button>
-		</form>
+		<div className={`${styles.memberBox} ${styles.join}`}>
+			<form onSubmit={handleSubmit}>
+				<h2> SIGN UP</h2>
+				<label htmlFor="userName" className="hidden"></label>
+				<input
+					ref={usernameRef}
+					type="text"
+					placeholder="Enter username"
+					id="userName"
+				/>
+				<label htmlFor="userEmail" className="hidden" id="userEmail"></label>
+				<input
+					ref={emailRef}
+					type="text"
+					placeholder="Enter your email"
+				></input>
+				<label htmlFor="password" className="hidden"></label>
+				<input
+					ref={passwordRef}
+					type="password"
+					id="userPassword"
+					placeholder="Enter password"
+				/>
+				<button className={styles.btnJoin}>SIGN UP</button>
+			</form>
+		</div>
 	);
-}
+};
 
-export default RegistrationForm;
+export default SignUpForm;
