@@ -17,3 +17,5 @@ const WorryAPI = {
 		return axios.delete();
 	},
 };
+
+export default WorryAPI; 

@@ -1,0 +1,38 @@
+.card {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	margin-bottom: 0.5em;
+	border-radius: 1em;
+	background-color: yellow;
+	box-shadow: 6px 6px 8px 0px rgba(217, 217, 217, 1);
+	max-width: 30rem;
+}
+
+.info {
+	width: 100%;
+}
+
+.city,
+.time,
+.body {
+	margin: 0;
+	font-size: 0.8rem;
+	margin-bottom: 0.2em;
+}
+
+.city {
+	font-size: 1.2rem;
+	padding-top: 1em;
+}
+/* .time {
+	margin-bottom: 1em;
+}
+.time::after {
+	content: "";
+	display: block;
+	width: 90%;
+	height: 2px;
+	background-color: makerWheat;
+	transform: translateY(0.5em);
+} */
