@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === "production") {
 
 app.use("/api", require("./routes/authentication"));
 app.use(require("./routes/api/posts"))
-app.use(require("./routes/api/user.js"))
+app.use(require("./routes/api/user"))
 // Send every request to the React app
 // Define any API routes before this runs
 //when ready to deploy uncomment code under this line
@@ -38,4 +38,4 @@ app.listen(PORT, function () {
 });
 
 
-// Test for push
+
