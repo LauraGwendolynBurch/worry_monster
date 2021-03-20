@@ -1,0 +1,10 @@
+[class^="hidden"] {
+	width: 1px;
+	height: 1px;
+	position: absolute;
+	top: -9999999px;
+	left: -99999999px;
+    z-index: -9999; 
+    overflow: hidden;
+}
+
