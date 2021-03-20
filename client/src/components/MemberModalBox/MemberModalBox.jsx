@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { useHistory } from "react-router-dom";
 import styles from "./MemberModalBox.module.css";
 import API from "../../utils/API";
 import { useLogin } from "../../utils/auth";
@@ -6,10 +7,13 @@ import welcomeMon from "../../images/mon1.png";
 import SignUpForm from "../SignUpForm";
 import LoginForm from "../LoginForm";
 
-const MemberModalBox = ({ closeModal, history }) => {
+const MemberModalBox = ({ setLoginModal, history }) => {
 	// const emailRef = useRef();
 	// const passwordRef = useRef();
 	// const usernameRef = useRef();
+	const closeModal = () => {
+		setLoginModal(() => false);
+	};
 
 	const [isJoin, setJoin] = useState(false);
 
@@ -87,6 +91,7 @@ const MemberModalBox = ({ closeModal, history }) => {
 						// handleSubmit={handleSubmit}
 						// onSubmit={emailJoin}
 						history={history}
+						closeModal={closeModal} 
 					/>
 				) : (
 					<LoginForm
@@ -96,6 +101,7 @@ const MemberModalBox = ({ closeModal, history }) => {
 						// onSubmit={emailLogin}
 						setJoin={setJoin}
 						history={history}
+						closeModal={closeModal} 
 					/>
 				)}
 				<button className={styles.btnClose} onClick={closeModal}>

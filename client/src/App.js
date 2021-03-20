@@ -1,11 +1,10 @@
+
 import React, { useState, Component } from "react";
 import {
 	useAuthenticatedUser,
 	useAuthTokenStore,
 	useIsAuthenticated,
 } from "./utils/auth";
-// import RegistrationForm from "./components/RegistrationForm";
-// import LoginForm from "./components/LoginForm";
 import LogoutButton from "./components/LogoutButton";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.module.css";
@@ -19,7 +18,7 @@ function App() {
 	const isAuthenticated = useIsAuthenticated();
 	// const authenticatedUser = useAuthenticatedUser();
 	const [loginModal, setLoginModal] = useState(false);
-	const [user, setUser] = useState(null);
+	// const [user, setUser] = useState(null);
 
 	return (
 		<BrowserRouter>

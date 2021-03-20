@@ -4,10 +4,7 @@ import MemberModalBox from "./MemberModalBox/MemberModalBox";
 
 const ModalContainer = ({ setLoginModal }) => {
 	const history = useHistory();
-	const closeModal = () => {
-		setLoginModal(() => false);
-	};
 
-	return <MemberModalBox closeModal={closeModal} history={history} />;
+	return <MemberModalBox setLoginModal={setLoginModal} history={history} />;
 };
 export default ModalContainer;

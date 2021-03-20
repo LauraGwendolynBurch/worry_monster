@@ -8,7 +8,7 @@ const Main = ({ setLoginModal, user }) => {
 	return (
 		<>
 			<HeaderContainer setLoginModal={setLoginModal} user={user} />
-			<LogoBox user={user} />
+			<LogoBox />
 			<Footer />
 		</>
 	);
