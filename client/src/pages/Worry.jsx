@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Worry.module.css";
 import HeaderContainer from "../components/HeaderContainer";
 import Editor from "../components/Editor/Editor";
 import Preview from "../components/Preview/Preview";
+import WorryAPI from "../utils/WorryApi";
 
 const Worry = (props) => {
 	const [cards, setCards] = useState({
@@ -25,8 +26,23 @@ const Worry = (props) => {
 			date: new Date(Date.now()),
 		},
 	});
+	const [cardObject, setCardObject] = useState();
 
+	useEffect(() => {
+		WorryAPI.getMyWorry().then((res) => {
+			console.log("myworries", res.data)
+			setCards(res.data);
+		});
+	}, []);
+
+	const loadCard = () => {
+		WorryAPI.getMyWorry() //
+			.then((res) => setCards()) //
+			.catch((err) => console.log(err));
+	};
+	const handleCardSubmit = () => {};
 	const addCard = (card) => {
+		console.log(cards);
 		setCards((cards) => {
 			const updated = { ...cards };
 			updated[card.id] = card;
