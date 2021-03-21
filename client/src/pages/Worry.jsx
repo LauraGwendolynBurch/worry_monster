@@ -26,12 +26,40 @@ const Worry = (props) => {
 		},
 	});
 
+	const addCard = (card) => {
+		setCards((cards) => {
+			const updated = { ...cards };
+			updated[card.id] = card;
+			return updated;
+		});
+	};
+
+	const updateCard = (card) => {
+		setCards((cards) => {
+			const updated = { ...cards };
+			updated[card.id] = card;
+			return updated;
+		});
+	};
+	const deleteCard = (card) => {
+		console.log(card);
+		setCards((cards) => {
+			const updated = { ...cards };
+			delete updated[card.id];
+			return updated;
+		});
+	};
 	return (
 		<section className={styles.worrypage}>
 			<HeaderContainer />
 			<div className={styles.container}>
-				<Editor />
-				<Preview />
+				<Editor
+					cards={cards}
+					addCard={addCard}
+					deleteCard={deleteCard}
+					updateCard={updateCard}
+				/>
+				<Preview cards={cards} />
 			</div>
 			<h1>sdflkdjfsdkf</h1>
 		</section>

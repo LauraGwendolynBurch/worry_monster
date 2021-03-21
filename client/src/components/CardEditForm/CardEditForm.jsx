@@ -1,28 +1,28 @@
 import React, { useRef } from "react";
-import Button from "../Button/button";
+import Button from "../Button/Button";
 
 import styles from "./CardEditForm.module.css";
 
-const CardEditForm = ({ card, updateCard, deleteCard }) => {
+const CardEditForm = ({ card }) => {
 	const formRef = useRef();
 	const cityRef = useRef();
 	const bodyRef = useRef();
 
 	const { city, body } = card;
-	const onChange = (event) => {
-		if (event.currentTarget === null) {
-			return;
-		}
-		event.preventDefault();
+	// const onChange = (event) => {
+	// 	if (event.currentTarget === null) {
+	// 		return;
+	// 	}
+	// 	event.preventDefault();
 
-		updateCard({
-			...card,
-			[event.currentTarget.city]: event.currentTarget.value,
-		});
-	};
-	const onSubmit = (event) => {
-		deleteCard(card);
-	};
+	// 	updateCard({
+	// 		...card,
+	// 		[event.currentTarget.city]: event.currentTarget.value,
+	// 	});
+	// };
+	// const onSubmit = (event) => {
+	// 	deleteCard(card);
+	// };
 
 	return (
 		<form ref={formRef} className={styles.form}>
@@ -32,7 +32,7 @@ const CardEditForm = ({ card, updateCard, deleteCard }) => {
 				type="text"
 				name="city"
 				value={city}
-				onChange={onChange}
+				// onChange={onChange}
 			/>
 
 			<textarea
@@ -40,10 +40,11 @@ const CardEditForm = ({ card, updateCard, deleteCard }) => {
 				className={styles.textarea}
 				name="message"
 				value={body}
-				onChange={onChange}
+				// onChange={onChange}
 			></textarea>
-
-			<Button name="Delete" onClick={onSubmit} />
+			<Button name ="Edit"/>
+			<Button name="Delete" />
+			{/* <Button name="Delete" onClick={onSubmit} /> */}
 		</form>
 	);
 };

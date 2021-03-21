@@ -7,7 +7,7 @@ const Card = ({ card }) => {
 		<li className={styles.card}>
 			<div className={styles.info}>
 				<h3 className={styles.city}>{city}</h3>
-				<p className={styles.body}></p>
+				<p className={styles.body}>{body}</p>
 			</div>
 		</li>
 	);

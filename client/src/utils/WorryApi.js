@@ -2,20 +2,21 @@ import axios from "axios";
 
 const WorryAPI = {
 	getAllWorry: function () {
-		return axios.get();
+		return axios.get("/api/posts");
 	},
-	getMyWorry: function () {
-		return axios.get();
+	getMyWorry: function (userid) {
+		return axios.get("/api/posts/" + userid);
 	},
-	saveMyWorry: function () {
-		return axios.post();
+	// req.body => body
+	createMyWorry: function (body) {
+		return axios.post("/api/posts", body);
 	},
-	updateMyWorry: function () {
-		return axios.put();
+	updateMyWorry: function (postid) {
+		return axios.put("/api/posts/" + postid);
 	},
-	deleteMyWorry: function () {
-		return axios.delete();
+	deleteMyWorry: function (postid) {
+		return axios.delete("/api/posts/" + postid);
 	},
 };
 
-export default WorryAPI; 
+export default WorryAPI;
