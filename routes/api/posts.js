@@ -24,7 +24,8 @@ router.post("/api/posts", checkAuth, (req, res) => {
 
 	req.body.user = req.userData.id;
 	//using id from cookie
-	// userid should not on URL
+	// userid should not be on URL
+	//req.body.user => for recognizing who added the post
 	console.log(req.body);
 	db.Post.create(req.body)
 		.then((dbModel) => res.json(dbModel))

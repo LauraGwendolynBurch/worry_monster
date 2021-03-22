@@ -29,18 +29,19 @@ const Worry = (props) => {
 	const [cardObject, setCardObject] = useState();
 
 	useEffect(() => {
+		// getting all my worry from database 
 		WorryAPI.getMyWorry().then((res) => {
 			console.log("myworries", res.data)
 			setCards(res.data);
 		});
 	}, []);
 
-	const loadCard = () => {
-		WorryAPI.getMyWorry() //
-			.then((res) => setCards()) //
-			.catch((err) => console.log(err));
-	};
-	const handleCardSubmit = () => {};
+	// const loadCard = () => {
+	// 	WorryAPI.getMyWorry() //
+	// 		.then((res) => setCards()) //
+	// 		.catch((err) => console.log(err));
+	// };
+	
 	const addCard = (card) => {
 		console.log(cards);
 		setCards((cards) => {
