@@ -7,31 +7,31 @@ import WorryAPI from "../utils/WorryApi";
 
 const Worry = (props) => {
 	const [cards, setCards] = useState({
-		1: {
-			id: "1",
-			city: "Seattle",
-			body: "This is where you post your worry.  I worry about too much rain.",
-			date: new Date(Date.now()),
-		},
-		2: {
-			id: "2",
-			city: "Dallas",
-			body: "I am worried about money.",
-			date: new Date(Date.now()),
-		},
-		3: {
-			id: "3",
-			city: "Orlando",
-			body: "I am worried my husband is mad at me.",
-			date: new Date(Date.now()),
-		},
+		// 1: {
+		// 	id: "1",
+		// 	city: "Seattle",
+		// 	body: "This is where you post your worry.  I worry about too much rain.",
+		// 	date: new Date(Date.now()),
+		// },
+		// 2: {
+		// 	id: "2",
+		// 	city: "Dallas",
+		// 	body: "I am worried about money.",
+		// 	date: new Date(Date.now()),
+		// },
+		// 3: {
+		// 	id: "3",
+		// 	city: "Orlando",
+		// 	body: "I am worried my husband is mad at me.",
+		// 	date: new Date(Date.now()),
+		// },
 	});
 	const [cardObject, setCardObject] = useState();
 
 	useEffect(() => {
-		// getting all my worry from database 
+		// getting all my worry from database
 		WorryAPI.getMyWorry().then((res) => {
-			console.log("myworries", res.data)
+			console.log("myworries", res.data);
 			setCards(res.data);
 		});
 	}, []);
@@ -41,7 +41,7 @@ const Worry = (props) => {
 	// 		.then((res) => setCards()) //
 	// 		.catch((err) => console.log(err));
 	// };
-	
+
 	const addCard = (card) => {
 		console.log(cards);
 		setCards((cards) => {

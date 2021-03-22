@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 import API from "./API";
 import { useStoreContext } from "../store";
@@ -31,7 +31,7 @@ export const useAuthTokenStore = () => {
 	const [, dispatch] = useStoreContext();
 	const [isDone, setIsDone] = useState(false);
 
-	const history = useHistory();
+	// const history = useHistory();
 
 	useEffect(() => {
 		if (isDone) return;
@@ -57,7 +57,7 @@ export const useAuthTokenStore = () => {
 			dispatch({ type: LOGOUT_USER });
 
 			// Redirect to login
-			history.push("/");
+			// history.push("/");
 		};
 
 		if (token.exp < currentTime) {
@@ -83,7 +83,7 @@ export const useAuthTokenStore = () => {
 
 			authCheck();
 		}
-	}, [dispatch, history, isDone]);
+	}, [dispatch, isDone]);
 
 	return isDone;
 };
@@ -126,12 +126,12 @@ export const useLogin = () => {
 
 export const useLogout = () => {
 	const [, dispatch] = useStoreContext();
-	const history = useHistory();
+	// const history = useHistory();
 
 	return () => {
 		setAuthToken(false);
 		dispatch({ type: LOGOUT_USER });
 
-		history.push("/");
+		// history.push("/");
 	};
 };
