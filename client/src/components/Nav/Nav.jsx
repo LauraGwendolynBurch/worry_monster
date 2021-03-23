@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Nav.module.css";
 import { Link } from "react-router-dom";
-import LoginButton from "../LoginButton/LoginButton";
 import Shape1 from "../../images/Shape1.svg";
 
 const Nav = ({ setLoginModal, user }) => {
