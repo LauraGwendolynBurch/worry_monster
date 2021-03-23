@@ -46,7 +46,7 @@ const Worry = (props) => {
 
 	const handleWorryEdit = (card) => {
 		setCards((cards) => {
-			const updated = { cards };
+			const updated = { ...cards };
 			updated[card._id] = card;
 			return updated;
 		});
@@ -63,9 +63,13 @@ const Worry = (props) => {
 					deleteCard={handleWorryDelete}
 					onEdit={handleWorryEdit}
 				/>
-				<Preview cards={cards} />
+				<Preview
+					cards={cards}
+					onAdd={handleWorrySubmit}
+					deleteCard={handleWorryDelete}
+					onEdit={handleWorryEdit}
+				/>
 			</div>
-			<h1>sdflkdjfsdkf</h1>
 		</section>
 	);
 };
