@@ -22,18 +22,18 @@ function App() {
 	// const [user, setUser] = useState(null);
 
 	return (
-
+		
 		<BrowserRouter>
 			<Switch>
 				<div className="App">
 					<div>
 						{!isAuthenticated && <Main setLoginModal={setLoginModal} />}
 						{isAuthenticated && <LogoutButton />}
-						<Route exact path="/Worry" component={isAuthenticated && Worry} />
-						<Route exact path="/SharedWorry" component={isAuthenticated && SharedWorry} />
-						<Route exact path="/Monster" component={isAuthenticated && Monster} />
+					<Route exact path="/Worry" component={isAuthenticated && Worry} />
+					<Route exact path="/SharedWorry" component={isAuthenticated && SharedWorry} />
+					<Route exact path="/Monster" component={isAuthenticated && Monster} />
 					</div>
-					{loginModal && <ModalContainer setLoginModal={setLoginModal} />}
+						{loginModal && <ModalContainer setLoginModal={setLoginModal} />}
 				</div>
 			</Switch>
 		</BrowserRouter>
