@@ -15,11 +15,12 @@ const CardEditForm = ({ card, deleteCard }) => {
 	// 	}
 	// 	event.preventDefault();
 
-	// 	updateCard({
+	// 	onEdit({
 	// 		...card,
-	// 		[event.currentTarget.city]: event.currentTarget.value,
+	// 		[event.currentTarget.name]: event.currentTarget.value,
 	// 	});
 	// };
+
 	const onSubmit = (event) => {
 		deleteCard(card);
 	};
