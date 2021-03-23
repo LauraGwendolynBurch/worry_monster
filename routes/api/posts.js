@@ -34,7 +34,23 @@ router.post("/api/posts", checkAuth, (req, res) => {
 router.put("/api/posts/:postid", async (req, res) => {
 	const postUpdate = await db.Post.findById(req.params.postid);
 
+
+router.put("./api/post/:postid", (req, res) =>{
+    db.Post
+      .findOneAndUpdate({ _id: req.params.postid }, req.body, { new: true})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+})
+
+router.delete("./api/post/:postid", (req, res) =>{
+    db.Post.findById({ _id: req.params.postid })
+            .then(dbModel => dbModel.remove())
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+})
+
 	console.log(postUpdate);
+
 
 	postUpdate.share = !postUpdate.share;
 

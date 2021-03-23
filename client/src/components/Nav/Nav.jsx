@@ -14,7 +14,7 @@ const Nav = ({ setLoginModal, user }) => {
 					</Link>
 					<span>worry monster</span>
 				</h1>
-				<LoginButton setLoginModal={setLoginModal} user={user} />
+				
 
 				
 			</div>
