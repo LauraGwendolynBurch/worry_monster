@@ -15,7 +15,7 @@ const CardEditForm = ({ card, deleteCard }) => {
 	// 	}
 	// 	event.preventDefault();
 
-	// 	updateCard({
+	// 	onEdit({
 	// 		...card,
 	// 		[event.currentTarget.city]: event.currentTarget.value,
 	// 	});
@@ -42,7 +42,7 @@ const CardEditForm = ({ card, deleteCard }) => {
 				value={body}
 				// onChange={onChange}
 			></textarea>
-			<Button name="Edit" />
+			<Button name="Edit"  />
 			<Button name="Delete" onClick={onSubmit} />
 			{/* <Button name="Delete" onClick={onSubmit} /> */}
 		</form>
