@@ -7,7 +7,7 @@ import LogoBox from "../components/LogoBox/LogoBox";
 const Main = ({ setLoginModal, user }) => {
 	return (
 		<>
-			<HeaderContainer setLoginModal={setLoginModal}  user={user} />
+			 {/* <HeaderContainer setLoginModal={setLoginModal}  user={user} />  */}
 			<LogoBox setLoginModal={setLoginModal}  />
 			<Footer />
 		</>
