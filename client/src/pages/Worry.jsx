@@ -54,6 +54,7 @@ const Worry = (props) => {
 	};
 
 	return (
+	
 		<section className={styles.worrypage}>
 			<HeaderContainer />
 			<div className={styles.container}>

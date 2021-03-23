@@ -1,7 +1,9 @@
 import React from "react";
+import HeaderContainer from "../components/HeaderContainer";
+
 
 const Monster = (props) => {
-	return <h1> monster </h1>;
+	return  <HeaderContainer  />  ;
 };
 
 export default Monster;

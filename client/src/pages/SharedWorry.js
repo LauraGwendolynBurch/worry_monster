@@ -1,11 +1,12 @@
 import React from "react";
+import HeaderContainer from "../components/HeaderContainer";
 
 function SharedWorry (){
 
     return (
-        <div>
-        Shared Worries here
-        </div>
+
+        <HeaderContainer  />
+        
 
     )
 }
