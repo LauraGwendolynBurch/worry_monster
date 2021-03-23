@@ -1,8 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./LogoBox.module.css";
+import LoginButton from "../LoginButton/LoginButton";
 
-const LogoBox = (props) => {
+const LogoBox = ( { setLoginModal} ) => {
+
+
+	
+
+
 	return (
 		<section className={styles.container}>
 			<div>
@@ -18,7 +24,8 @@ const LogoBox = (props) => {
 						go...
 					</p>
 					<div className="btnbox">
-						<Link>start worry monster</Link>
+						<LoginButton setLoginModal={setLoginModal}>start worry monster</LoginButton>
+			
 					</div>
 				</div>
 			</div>
@@ -27,3 +34,4 @@ const LogoBox = (props) => {
 };
 
 export default LogoBox;
+
