@@ -7,10 +7,11 @@ import WorryAPI from "../utils/WorryApi";
 
 const Worry = (props) => {
 	const [cards, setCards] = useState({});
-	const [cardFormObject, setFormObject] = useState({
-		city: "",
-		body: "",
-	});
+	// const [cardFormObject, setFormObject] = useState({
+	// 	city: "",
+	// 	body: "",
+
+	// });
 
 	useEffect(() => {
 		// getting all my worry from database
@@ -33,12 +34,23 @@ const Worry = (props) => {
 	};
 
 	const handleWorryDelete = (card) => {
+		console.log(card);
 		setCards((cards) => {
 			const updated = { ...cards };
-			delete updated[card.id];
+			delete updated[card._id];
 			return updated;
 		});
-		WorryAPI.deleteMyWorry(card);
+
+		WorryAPI.deleteMyWorry(card._id);
+	};
+
+	const handleWorryEdit = (card) => {
+		setCards((cards) => {
+			const updated = { ...cards };
+			updated[card._id] = card;
+			return updated;
+		});
+		WorryAPI.updateMyWorry(card._id);
 	};
 
 	return (
@@ -49,10 +61,15 @@ const Worry = (props) => {
 					cards={cards}
 					onAdd={handleWorrySubmit}
 					deleteCard={handleWorryDelete}
+					onEdit={handleWorryEdit}
 				/>
-				<Preview cards={cards} />
+				<Preview
+					cards={cards}
+					onAdd={handleWorrySubmit}
+					deleteCard={handleWorryDelete}
+					onEdit={handleWorryEdit}
+				/>
 			</div>
-			<h1>sdflkdjfsdkf</h1>
 		</section>
 	);
 };
