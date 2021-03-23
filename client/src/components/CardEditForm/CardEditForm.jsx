@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 
 import styles from "./CardEditForm.module.css";
 
-const CardEditForm = ({ card }) => {
+const CardEditForm = ({ card, deleteCard }) => {
 	const formRef = useRef();
 	const cityRef = useRef();
 	const bodyRef = useRef();
@@ -20,9 +20,9 @@ const CardEditForm = ({ card }) => {
 	// 		[event.currentTarget.city]: event.currentTarget.value,
 	// 	});
 	// };
-	// const onSubmit = (event) => {
-	// 	deleteCard(card);
-	// };
+	const onSubmit = (event) => {
+		deleteCard(card);
+	};
 
 	return (
 		<form ref={formRef} className={styles.form}>
@@ -42,8 +42,8 @@ const CardEditForm = ({ card }) => {
 				value={body}
 				// onChange={onChange}
 			></textarea>
-			<Button name ="Edit"/>
-			<Button name="Delete" />
+			<Button name="Edit" />
+			<Button name="Delete" onClick={onSubmit} />
 			{/* <Button name="Delete" onClick={onSubmit} /> */}
 		</form>
 	);

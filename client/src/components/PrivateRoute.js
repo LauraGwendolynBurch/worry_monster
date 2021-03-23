@@ -11,7 +11,7 @@ const PrivateRoute = ({
 }) => {
 	const isAuth = useIsAuthenticated();
 
-	const render = () =>
+	const render = ({locations}) =>
 		isAuth ? (
 			Component ? (
 				<Component />

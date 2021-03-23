@@ -6,75 +6,49 @@ import Preview from "../components/Preview/Preview";
 import WorryAPI from "../utils/WorryApi";
 
 const Worry = (props) => {
-	const [cards, setCards] = useState({
-		1: {
-			id: "1",
-			city: "Seattle",
-			body: "This is where you post your worry.  I worry about too much rain.",
-			date: new Date(Date.now()),
-		},
-		2: {
-			id: "2",
-			city: "Dallas",
-			body: "I am worried about money.",
-			date: new Date(Date.now()),
-		},
-		3: {
-			id: "3",
-			city: "Orlando",
-			body: "I am worried my husband is mad at me.",
-			date: new Date(Date.now()),
-		},
+	const [cards, setCards] = useState({});
+	const [cardFormObject, setFormObject] = useState({
+		city: "",
+		body: "",
 	});
-	const [cardObject, setCardObject] = useState();
 
 	useEffect(() => {
-		// getting all my worry from database 
-		WorryAPI.getMyWorry().then((res) => {
-			console.log("myworries", res.data)
-			setCards(res.data);
-		});
+		// getting all my worry from database
+		loadMyWorry();
 	}, []);
 
-	// const loadCard = () => {
-	// 	WorryAPI.getMyWorry() //
-	// 		.then((res) => setCards()) //
-	// 		.catch((err) => console.log(err));
-	// };
-	
-	const addCard = (card) => {
-		console.log(cards);
-		setCards((cards) => {
-			const updated = { ...cards };
-			updated[card.id] = card;
-			return updated;
-		});
+	const loadMyWorry = () => {
+		WorryAPI.getMyWorry() //
+			.then((res) => setCards(res.data)) //
+			.catch((err) => console.log(err));
 	};
 
-	const updateCard = (card) => {
+	const handleWorrySubmit = (card) => {
 		setCards((cards) => {
 			const updated = { ...cards };
 			updated[card.id] = card;
 			return updated;
 		});
+		WorryAPI.createMyWorry(card);
 	};
-	const deleteCard = (card) => {
-		console.log(card);
+
+	const handleWorryDelete = (card) => {
 		setCards((cards) => {
 			const updated = { ...cards };
 			delete updated[card.id];
 			return updated;
 		});
+		WorryAPI.deleteMyWorry(card);
 	};
+
 	return (
 		<section className={styles.worrypage}>
 			<HeaderContainer />
 			<div className={styles.container}>
 				<Editor
 					cards={cards}
-					addCard={addCard}
-					deleteCard={deleteCard}
-					updateCard={updateCard}
+					onAdd={handleWorrySubmit}
+					deleteCard={handleWorryDelete}
 				/>
 				<Preview cards={cards} />
 			</div>
