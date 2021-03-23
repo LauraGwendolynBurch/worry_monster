@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Worry.module.css";
 import HeaderContainer from "../components/HeaderContainer";
-import Editor from "../components/Editor/Editor";
+import Editor from "../components/Add/Add";
 import Preview from "../components/Preview/Preview";
 import WorryAPI from "../utils/WorryApi";
 
