@@ -3,12 +3,6 @@
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	background-image: linear-gradient(
-		180deg,
-		#142a77 0%,
-		#6047a5 47.5%,
-		#bc88ff 100%
-	);
 }
 
 .container {

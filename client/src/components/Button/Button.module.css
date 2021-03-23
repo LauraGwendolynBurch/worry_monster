@@ -1,11 +1,12 @@
 .button {
-	background-color: green;
+	background-color: lightgray;
 	color: white;
 	font-weight: bold;
 	cursor: pointer;
 	padding: 0.5em;
 	flex: 1 1 50%;
 	font-size: 0.8rem;
+	opacity: 0.8;
 }
 
 .button:hover {

@@ -91,7 +91,7 @@ const MemberModalBox = ({ setLoginModal, history }) => {
 						// handleSubmit={handleSubmit}
 						// onSubmit={emailJoin}
 						history={history}
-						closeModal={closeModal} 
+						closeModal={closeModal}
 					/>
 				) : (
 					<LoginForm
@@ -101,12 +101,11 @@ const MemberModalBox = ({ setLoginModal, history }) => {
 						// onSubmit={emailLogin}
 						setJoin={setJoin}
 						history={history}
-						closeModal={closeModal} 
+						closeModal={closeModal}
 					/>
 				)}
 				<button className={styles.btnClose} onClick={closeModal}>
-					x close
-					<span className="hidden"></span>
+					x<span className="hidden"></span>
 				</button>
 			</section>
 		</div>
