@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./Nav.module.css";
-import { Link } from "react-router-dom";
-import LoginButton from "../LoginButton/LoginButton";
+import { Link, Switch } from "react-router-dom";
 import Shape1 from "../../images/Shape1.svg";
+import LogoutButton from "../../components/LogoutButton.js"
 
 const Nav = ({ setLoginModal, user }) => {
 	return (
@@ -14,11 +14,18 @@ const Nav = ({ setLoginModal, user }) => {
 					</Link>
 					<span>worry monster</span>
 				</h1>
-				
-
-				
+				<Switch>
+					<div >
+						<Link className={styles.navRouteLinks} to="/Worry">My Worries</Link>
+						<Link className={styles.navRouteLinks} to="/SharedWorry">Shared Worries</Link>
+						<Link className={styles.navRouteLinks} to="/Monster">Monster</Link>
+					</div>
+				</Switch>
+				<LogoutButton />
 			</div>
 		</header>
+
+
 	);
 };
 
