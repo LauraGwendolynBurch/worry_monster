@@ -3,6 +3,7 @@ const db = require("../../models");
 const checkAuth = require("../middleware/checkauth");
 const ObjectId = require("mongoose").Types.ObjectId;
 //current user's worry
+
 router.get("/api/posts", checkAuth, (req, res) => {
 	// console.log(req.params.userid);
 	console.log("userdata", req.userData);
@@ -31,8 +32,8 @@ router.post("/api/posts", checkAuth, (req, res) => {
 		.then((dbModel) => res.json(dbModel))
 		.catch((err) => res.status(422).json(err));
 });
-router.put("/api/posts/:postid", async (req, res) => {
-	const postUpdate = await db.Post.findById(req.params.postid);
+ router.put("/api/posts/:postid", async (req, res) => {
+		const postUpdate = await db.Post.findById(req.params.postid);
 
 
 router.put("./api/post/:postid", (req, res) =>{
@@ -49,14 +50,14 @@ router.delete("./api/post/:postid", (req, res) =>{
             .catch(err => res.status(422).json(err));
 })
 
-	console.log(postUpdate);
+	// console.log(postUpdate);
 
 
-	postUpdate.share = !postUpdate.share;
+	// postUpdate.share = !postUpdate.share;
 
-	db.Post.findOneAndUpdate({ _id: req.params.postid }, postUpdate)
-		.then((dbModel) => res.json(dbModel))
-		.catch((err) => res.status(422).json(err));
+	// db.Post.findOneAndUpdate({ _id: req.params.postid }, postUpdate)
+	// 	.then((dbModel) => res.json(dbModel))
+	// 	.catch((err) => res.status(422).json(err));
 });
 router.delete("/api/posts/:postid", (req, res) => {
 	db.Post.findByIdAndRemove(req.params.postid)

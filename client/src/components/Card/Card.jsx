@@ -14,11 +14,11 @@ const Card = ({ card, deleteCard, onEdit }) => {
 				<p className={styles.body}>{body}</p>
 				<div className={styles.buttons}>
 					<button className={styles.button}>
-						Change Share Status to private to share
+						Share My Worry
 					</button>
 					&nbsp;
 					<button onClick={onSubmit} className={styles.button}>
-						Delete and Feed it to Monster
+						Feed Worry to Monster
 					</button>
 				</div>
 			</div>
