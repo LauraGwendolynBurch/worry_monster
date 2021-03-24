@@ -57,12 +57,12 @@ const Worry = (props) => {
 		<section className={styles.worrypage}>
 			
 			<div className={styles.container}>
-				<Editor
+				 <Editor
 					cards={cards}
 					onAdd={handleWorrySubmit}
-					deleteCard={handleWorryDelete}
-					onEdit={handleWorryEdit}
-				/>
+					// deleteCard={handleWorryDelete}
+					// onEdit={handleWorryEdit}
+				/> 
 				<Preview
 					cards={cards}
 					onAdd={handleWorrySubmit}

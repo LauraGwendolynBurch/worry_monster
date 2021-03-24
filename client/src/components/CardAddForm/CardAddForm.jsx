@@ -33,7 +33,7 @@ const CardAddForm = ({ onAdd }) => {
 				ref={bodyRef}
 				className={styles.textarea}
 				name="body"
-				placeholder="Message"
+				placeholder="Worry"
 			></textarea>
 
 			<Button name="Add" onClick={onSubmit} />
