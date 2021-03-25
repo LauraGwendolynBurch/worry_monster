@@ -64,8 +64,9 @@ const Worry = (props) => {
 					// onEdit={handleWorryEdit}
 				/> 
 				<Preview
+				
 					cards={cards}
-					onAdd={handleWorrySubmit}
+					// onAdd={handleWorrySubmit}
 					deleteCard={handleWorryDelete}
 					onEdit={handleWorryEdit}
 				/>
