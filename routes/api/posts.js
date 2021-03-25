@@ -34,13 +34,6 @@ router.post("/api/posts", checkAuth, (req, res) => {
 });
 
 
-
-
-
-
-
-
-
 router.put("/api/posts/:postid", async (req, res) => {
 
 
