@@ -13,9 +13,9 @@ router.get("/api/posts", checkAuth, (req, res) => {
     .catch((err) => res.status(422).json(err));
 });
 
-//eveyone's worry - cannot have same URL for different routes
+//eveyone's worry - all is all worries that are shared
 router.get("/api/posts/all", checkAuth, (req, res) => {
-  db.Post.find()
+  db.Post.find({share: true})
     .then((dbModel) => res.json(dbModel))
     .catch((err) => res.status(422).json(err));
 });
@@ -33,10 +33,11 @@ router.post("/api/posts", checkAuth, (req, res) => {
     .catch((err) => res.status(422).json(err));
 });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ce63776f7e18eae417276fc686b51ffb887969af
 router.put("/api/posts/:postid", async (req, res) => {
-
-
   const postUpdate = await db.Post.findById(req.params.postid);
   console.log(postUpdate);
 

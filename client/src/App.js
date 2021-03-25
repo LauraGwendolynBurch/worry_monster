@@ -7,7 +7,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.module.css";
 import Main from "./pages/Main";
 import Monster from "./pages/Monster";
-import SharedWorry from "./pages/SharedWorry";
+ import SharedWorry from "./pages/SharedWorry";
 import Worry from "./pages/Worry";
 import ModalContainer from './components/ModalContainer'
 import HeaderContainer from "./components/HeaderContainer";

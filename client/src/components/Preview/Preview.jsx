@@ -12,14 +12,6 @@ const Preview = ({ cards, deleteCard, onEdit }) => (
 					onEdit={onEdit} />
 				))}
 
-			{/* {Object.keys(cards).map((key) => (
-				<CardEditForm
-					key={key}
-					card={cards[key]}
-					deleteCard={deleteCard}
-					onEdit={onEdit}
-				/>
-			))} */}
 		</ul>
 	</section>
 );
