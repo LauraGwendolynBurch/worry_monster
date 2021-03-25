@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Preview.module.css";
 import Card from "../Card/Card";
+
 // import CardEditForm from "../CardEditForm/CardEditForm";
 
 const Preview = ({ cards, deleteCard, onEdit }) => (
