@@ -19,7 +19,9 @@ function SharedWorry() {
 
   const loadAllWorry = () => {
     WorryAPI.getAllWorry()
-      .then((res) => setCards(res.data))
+      .then((res) => {
+        console.log(res.data)
+        setCards(res.data)})
 
       .catch((err) => console.log(err));
   };
