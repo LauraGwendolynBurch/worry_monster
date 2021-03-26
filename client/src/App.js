@@ -3,7 +3,7 @@ import {
 	useAuthTokenStore,
 	useIsAuthenticated,
 } from "./utils/auth";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import "./App.module.css";
 import Main from "./pages/Main";
 import Monster from "./pages/Monster";
