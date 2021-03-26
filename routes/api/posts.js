@@ -33,10 +33,7 @@ router.post("/api/posts", checkAuth, (req, res) => {
     .catch((err) => res.status(422).json(err));
 });
 
-<<<<<<< HEAD
 
-=======
->>>>>>> ce63776f7e18eae417276fc686b51ffb887969af
 router.put("/api/posts/:postid", async (req, res) => {
   const postUpdate = await db.Post.findById(req.params.postid);
   console.log(postUpdate);
