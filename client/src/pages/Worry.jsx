@@ -19,7 +19,9 @@ const Worry = (props) => {
 
 	const loadMyWorry = () => {
 		WorryAPI.getMyWorry() //
-			.then((res) => setCards(res.data)) //
+			.then((res) => {
+				console.log(res.data)
+				setCards(res.data)}) //
 			.catch((err) => console.log(err));
 	};
 
@@ -64,8 +66,9 @@ const Worry = (props) => {
 					// onEdit={handleWorryEdit}
 				/> 
 				<Preview
+				
 					cards={cards}
-					onAdd={handleWorrySubmit}
+					// onAdd={handleWorrySubmit}
 					deleteCard={handleWorryDelete}
 					onEdit={handleWorryEdit}
 				/>
