@@ -31,7 +31,16 @@ app.use(require("./routes/api/user"))
 //   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 // });
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/worryMonster");
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/worryMonster',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
+
 
 app.listen(PORT, function () {
   console.log(`🌎 ==> API server now on port ${PORT}!`);

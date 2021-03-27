@@ -11,6 +11,7 @@ const Worry = (props) => {
 	// 	body: "",
 
 	// });
+	
 
 	useEffect(() => {
 		// getting all my worry from database
