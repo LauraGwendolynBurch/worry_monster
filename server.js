@@ -23,15 +23,22 @@ if (process.env.NODE_ENV === "production") {
 app.use("/api", require("./routes/authentication"));
 app.use(require("./routes/api/posts"))
 app.use(require("./routes/api/user"))
-// Send every request to the React app
-// Define any API routes before this runs
-//when ready to deploy uncomment code under this line
 
-// app.get("*", function (req, res) {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/worryMonster");
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/worryMonster',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
+
 
 app.listen(PORT, function () {
   console.log(`🌎 ==> API server now on port ${PORT}!`);

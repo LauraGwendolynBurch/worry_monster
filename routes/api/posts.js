@@ -33,6 +33,7 @@ router.post("/api/posts", checkAuth, (req, res) => {
     .catch((err) => res.status(422).json(err));
 });
 
+
 router.put("/api/posts/:postid", async (req, res) => {
   const postUpdate = await db.Post.findById(req.params.postid);
   console.log(postUpdate);

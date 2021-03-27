@@ -22,6 +22,7 @@ function App() {
 			<Switch>
 				<div className="App">
 					<div>
+					<Route exact path="/" component={Main} />
 						{!isAuthenticated && <Main setLoginModal={setLoginModal} />}
 						{isAuthenticated && <HeaderContainer />}
 						<Route exact path={["/", "/Main"]} component={Main} />
