@@ -27,9 +27,9 @@ function App() {
 			<Switch>
 				<div className="App">
 					<div>
+					<Route exact path="/" component={Main} />
 						{!isAuthenticated && <Main setLoginModal={setLoginModal} />}
 						{isAuthenticated && <HeaderContainer />}
-					<Route exact path="/" component={Main} />
 					<Route exact path="/Worry" component={isAuthenticated && Worry} />
 					<Route exact path="/SharedWorry" component={isAuthenticated && SharedWorry} />
 					<Route exact path="/Monster" component={isAuthenticated && Monster} />
