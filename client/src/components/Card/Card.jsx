@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import Button from "../Button/Button";
 import styles from "./Card.module.css";
 import { Redirect } from "react-router-dom";
 import WorryAPI from "../../utils/WorryApi";
