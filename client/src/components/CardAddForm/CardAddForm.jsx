@@ -20,24 +20,26 @@ const CardAddForm = ({ onAdd }) => {
 	};
 
 	return (
-		<form ref={formRef} className={styles.form} onSubmit={onSubmit}>
-			<input
-				ref={cityRef}
-				className={styles.input}
-				type="text"
-				name="city"
-				placeholder="city"
-			/>
+		<div className={styles.wrap}>
+			<h3 className={styles.h3}>I eat your worries and troubles... </h3>
+			<form ref={formRef} className={styles.form} onSubmit={onSubmit}>
+				<input
+					className={styles.input}
+					type="text"
+					name="city"
+					placeholder="city"
+				/>
 
-			<textarea
-				ref={bodyRef}
-				className={styles.textarea}
-				name="body"
-				placeholder="Worry"
-			></textarea>
+				<textarea
+					ref={bodyRef}
+					className={styles.textarea}
+					name="body"
+					placeholder="Worry"
+				></textarea>
 
-			<Button name="Add" onClick={onSubmit} />
-		</form>
+				<Button name="Add" onClick={onSubmit} />
+			</form>
+		</div>
 	);
 };
 
