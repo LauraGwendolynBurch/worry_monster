@@ -1,0 +1,15 @@
+.btn {
+	background: transparent;
+	/* color: #666; */
+	max-width: 100px;
+	cursor: pointer;
+
+	font-weight: 600;
+	padding: 0.5em 0.5em;
+	border-radius: 4px;
+
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-right: 1px solid rgba(255, 255, 255, 0.2);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}

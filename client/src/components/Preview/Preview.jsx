@@ -3,6 +3,8 @@ import styles from "./Preview.module.css";
 import Card from "../Card/Card";
 
 
+
+
 const Preview = ({ cards, deleteCard, onEdit }) => (
 	<section className={styles.preview}>
 		<h3 className={styles.title}> My Worries</h3>
