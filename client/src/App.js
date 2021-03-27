@@ -24,11 +24,8 @@ function App() {
 					<div>
 						{!isAuthenticated && <Main setLoginModal={setLoginModal} />}
 						{isAuthenticated && <HeaderContainer />}
-						<Route
-							exact
-							path={["/", "/Worry"]}
-							component={isAuthenticated && Worry}
-						/>
+						<Route exact path={["/", "/Main"]} component={Main} />
+						<Route exact path="/Worry" component={isAuthenticated && Worry} />
 						<Route
 							exact
 							path="/SharedWorry"

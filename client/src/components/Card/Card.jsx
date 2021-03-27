@@ -22,27 +22,31 @@ const Card = ({ card, deleteCard, onEdit }) => {
 	};
 
 	return (
-		<li className={styles.card}>
-			<div className={styles.info}>
-				<h3 className={styles.city}>{city}</h3>
-				<p className={styles.body}>{body}</p>
-				<div className={styles.buttons}>
-					<div>
-						{redirectLink.redirect ? (
-							<Redirect to={redirectLink.redirect} />
-						) : (
-							<button id={_id} onClick={onShare} className={styles.button}>
-								Share My Worry
+		<div>
+			<li className={styles.card}>
+				<div className={styles.info}>
+					<form>
+						<h3 className={styles.city}>{city}</h3>
+						<p className={styles.body}>{body}</p>
+						<div className={styles.buttons}>
+							<div>
+								{redirectLink.redirect ? (
+									<Redirect to={redirectLink.redirect} />
+								) : (
+									<button id={_id} onClick={onShare} className={styles.button}>
+										Share My Worry
+									</button>
+								)}
+							</div>
+							&nbsp;
+							<button onClick={onSubmit} className={styles.button}>
+								Feed Worry to Monster
 							</button>
-						)}
-					</div>
-					&nbsp;
-					<button onClick={onSubmit} className={styles.button}>
-						Feed Worry to Monster
-					</button>
+						</div>
+					</form>
 				</div>
-			</div>
-		</li>
+			</li>
+		</div>
 	);
 };
 
