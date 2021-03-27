@@ -16,16 +16,14 @@ app.use(passport.initialize());
 passport.use(require("./config/jwtPassportStrategy"));
 
 // Serve up static assets (usually on heroku)
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("client/build"));
-// }
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 app.use("/api", require("./routes/authentication"));
 app.use(require("./routes/api/posts"))
 app.use(require("./routes/api/user"))
-// Send every request to the React app
-// Define any API routes before this runs
-//when ready to deploy uncomment code under this line
+
 
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
