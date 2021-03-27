@@ -1,11 +1,14 @@
 import React from "react";
 
+
 function SharedWorry (){
 
     return (
+
         <div>
-        Shared Worries here
+        SharedWorry Page 
         </div>
+        
 
     )
 }

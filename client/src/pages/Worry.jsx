@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Worry.module.css";
-import HeaderContainer from "../components/HeaderContainer";
 import Editor from "../components/Add/Add";
 import Preview from "../components/Preview/Preview";
 import WorryAPI from "../utils/WorryApi";
@@ -54,15 +53,16 @@ const Worry = (props) => {
 	};
 
 	return (
+	
 		<section className={styles.worrypage}>
-			<HeaderContainer />
+			
 			<div className={styles.container}>
-				<Editor
+				 <Editor
 					cards={cards}
 					onAdd={handleWorrySubmit}
-					deleteCard={handleWorryDelete}
-					onEdit={handleWorryEdit}
-				/>
+					// deleteCard={handleWorryDelete}
+					// onEdit={handleWorryEdit}
+				/> 
 				<Preview
 					cards={cards}
 					onAdd={handleWorrySubmit}

@@ -1,7 +1,10 @@
 import React from "react";
 
+
+
 const Monster = (props) => {
-	return <h1> monster </h1>;
+	return ( 
+	<div>Monster Page</div> ) ;
 };
 
 export default Monster;
