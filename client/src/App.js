@@ -20,12 +20,12 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Switch>
-				<div className="App">
+				<div>
 					<div>
-					<Route exact path="/" component={Main} />
-						{!isAuthenticated && <Main setLoginModal={setLoginModal} />}
+						<Route exact path="/" render={() =>{return <Main setLoginModal={setLoginModal} />}} />
+						
 						{isAuthenticated && <HeaderContainer />}
-						<Route exact path={["/", "/Main"]} component={Main} />
+						
 						<Route exact path="/Worry" component={isAuthenticated && Worry} />
 						<Route
 							exact
