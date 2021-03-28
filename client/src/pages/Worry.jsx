@@ -8,23 +8,16 @@ import HeaderContainer from "../components/HeaderContainer";
 
 const Worry = (props) => {
 	const [cards, setCards] = useState({});
-	// const [cardFormObject, setFormObject] = useState({
-	// 	city: "",
-	// 	body: "",
-
-	// });
-
 
 	useEffect(() => {
-		// getting all my worry from database
 		loadMyWorry();
 	}, []);
 
 	const loadMyWorry = () => {
 		WorryAPI.getMyWorry() //
 			.then((res) => {
-				console.log(res.data)
-				setCards(res.data)
+				console.log(res.data);
+				setCards(res.data);
 			}) //
 			.catch((err) => console.log(err));
 	};
@@ -59,7 +52,6 @@ const Worry = (props) => {
 	};
 
 	return (
-
 		<section className={styles.worrypage}>
 			<HeaderContainer />
 			<div className="card">
@@ -70,21 +62,13 @@ const Worry = (props) => {
 			</div>
 
 			<div className={styles.container}>
-
-
-
-
-
-
-
 				<Editor
 					cards={cards}
 					onAdd={handleWorrySubmit}
-				// deleteCard={handleWorryDelete}
-				// onEdit={handleWorryEdit}
+					// deleteCard={handleWorryDelete}
+					// onEdit={handleWorryEdit}
 				/>
 				<Preview
-
 					cards={cards}
 					// onAdd={handleWorrySubmit}
 					deleteCard={handleWorryDelete}
