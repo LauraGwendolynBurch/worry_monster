@@ -21,8 +21,9 @@ function SharedWorry() {
   const loadAllWorry = () => {
     WorryAPI.getAllWorry()
       .then((res) => {
-        console.log(res.data)
-        setCards(res.data)})
+        console.log(res.data);
+        setCards(res.data);
+      })
 
       .catch((err) => console.log(err));
   };
@@ -31,10 +32,17 @@ function SharedWorry() {
     
     <section className={styles.worrypage}>
     <HeaderContainer />
+    <div className="card">
+				<div className="info">
+					<h2 className="city">WElcome to Wory Monster</h2>
+					<p className="body">instructions</p>
+				</div>
+			</div>
       <div className={styles.container}>
-        {cards.length > 0 && cards.map((card) => {
-          return( <SharedCard city={card.city} body={card.body} />)
-        })}
+        {cards.length > 0 &&
+          cards.map((card) => {
+            return <SharedCard city={card.city} body={card.body} />;
+          })}
       </div>
     </section>
   );
