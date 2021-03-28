@@ -5,6 +5,7 @@ import Preview from "../components/Preview/Preview";
 import WorryAPI from "../utils/WorryApi";
 import HeaderContainer from "../components/HeaderContainer";
 
+
 const Worry = (props) => {
 	const [cards, setCards] = useState({});
 	// const [cardFormObject, setFormObject] = useState({
@@ -63,8 +64,8 @@ const Worry = (props) => {
 			<HeaderContainer />
 			<div className="card">
 				<div className="info">
-					<h2 className="city">WElcome to Wory Monster</h2>
-					<p className="body">instructions</p>
+				<h3 className={styles.title}> My Worries</h3>
+				<h3 className={styles.title}> filler text for instructions</h3>
 				</div>
 			</div>
 
