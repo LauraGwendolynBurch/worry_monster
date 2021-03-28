@@ -3,6 +3,7 @@ import styles from "../components/Preview/Preview.module.css";
 import React, { useEffect, useState } from "react";
 import WorryAPI from "../utils/WorryApi";
 import SharedCard from "../components/SharedCard";
+import HeaderContainer from "../components/HeaderContainer";
 
 function SharedWorry() {
   const [cards, setCards] = useState({});
@@ -27,7 +28,9 @@ function SharedWorry() {
   };
 
   return (
+    
     <section className={styles.worrypage}>
+    <HeaderContainer />
       <div className={styles.container}>
         {cards.length > 0 && cards.map((card) => {
           return( <SharedCard city={card.city} body={card.body} />)
