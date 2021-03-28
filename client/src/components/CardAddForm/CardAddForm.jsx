@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 import Button from "../Button/Button";
 import styles from "./CardAddForm.module.css";
+import swal from 'sweetalert';
+
 
 const CardAddForm = ({ onAdd }) => {
 	const formRef = useRef();
@@ -9,6 +11,7 @@ const CardAddForm = ({ onAdd }) => {
 
 	const onSubmit = (event) => {
 		event.preventDefault();
+		swal("Worry saved!", "Now let the moster take care of it!", "success");
 		const card = {
 			id: Date.now(),
 			city: cityRef.current.value || "",
