@@ -3,6 +3,7 @@ import styles from "./Worry.module.css";
 import Editor from "../components/Add/Add";
 import Preview from "../components/Preview/Preview";
 import WorryAPI from "../utils/WorryApi";
+import HeaderContainer from "../components/HeaderContainer";
 
 const Worry = (props) => {
 	const [cards, setCards] = useState({});
@@ -58,7 +59,7 @@ const Worry = (props) => {
 	return (
 	
 		<section className={styles.worrypage}>
-			
+			<HeaderContainer />
 			<div className={styles.container}>
 				 <Editor
 					cards={cards}
