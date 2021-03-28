@@ -56,8 +56,8 @@ const Worry = (props) => {
 			<HeaderContainer />
 			<div className="card">
 				<div className="info">
-				<h3 className={styles.title}> My Worries</h3>
-				<h3 className={styles.title}> filler text for instructions</h3>
+				<h3 className={styles.title}> Tell the Monster what is on your mind.</h3>
+				<h3 className={styles.title}>Be sure to include the city you are in.  Then decide if you want to feed the Worry Monster, or anonymously share with the community.  Either way the Monster takes care of you from here!  </h3>
 				</div>
 			</div>
 

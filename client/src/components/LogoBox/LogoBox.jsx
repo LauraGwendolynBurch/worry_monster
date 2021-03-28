@@ -19,8 +19,7 @@ const LogoBox = ( { setLoginModal} ) => {
 						W<span>O</span>RRY M<span>O</span>NSTER
 					</h2>
 					<p className={styles.desc}>
-						hi, there. I eat your worries and troubles, so you can let them
-						go...
+					Hi!  I am a Worry Monster! <br/> You may not have heard of me, but I am here to help you manage stress. <br/>  Create an account and can feed your worries to me! 
 					</p>
 					<div className="btnbox">
 						<LoginButton setLoginModal={setLoginModal}></LoginButton>

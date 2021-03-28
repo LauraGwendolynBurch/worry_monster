@@ -11,6 +11,7 @@ const SearchForm = (props) => {
 						className={styles.input}
 						onChange={props.handleInputChange}
 						value={props.searchState}
+						placeholder="Type in city here"
 					/>
 					{/* <button className={styles.btn}>search button</button> */}
 				</form>

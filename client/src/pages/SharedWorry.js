@@ -41,8 +41,7 @@ function SharedWorry() {
 			<HeaderContainer />
 			<div className="card">
 				<div className="info">
-					<h2 className="city"> Weelcome to Worry Monster</h2>
-					<p className=" body"> instructions</p>
+					<h2 className=" body"> Here you will find all the worries shared in our community.  You can even search by city to see what collective woes you may have in common with your neighbors.  The Worry Monster hopes seeing this might make you feel a little lighter. </h2>
 				</div>
 			</div>
 			<div className={styles.container}>
