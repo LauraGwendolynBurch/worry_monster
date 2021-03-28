@@ -11,7 +11,6 @@ const Worry = (props) => {
 	// 	body: "",
 
 	// });
-	
 
 	useEffect(() => {
 		// getting all my worry from database
@@ -21,10 +20,12 @@ const Worry = (props) => {
 	const loadMyWorry = () => {
 		WorryAPI.getMyWorry() //
 			.then((res) => {
-				console.log(res.data)
-				setCards(res.data)}) //
+				console.log(res.data);
+				setCards(res.data);
+			}) //
 			.catch((err) => console.log(err));
 	};
+	// console.log(cards, "cards");
 
 	const handleWorrySubmit = (card) => {
 		setCards((cards) => {
@@ -56,18 +57,15 @@ const Worry = (props) => {
 	};
 
 	return (
-	
 		<section className={styles.worrypage}>
-			
 			<div className={styles.container}>
-				 <Editor
+				<Editor
 					cards={cards}
 					onAdd={handleWorrySubmit}
 					// deleteCard={handleWorryDelete}
 					// onEdit={handleWorryEdit}
-				/> 
+				/>
 				<Preview
-				
 					cards={cards}
 					// onAdd={handleWorrySubmit}
 					deleteCard={handleWorryDelete}

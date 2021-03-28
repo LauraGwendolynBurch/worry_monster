@@ -2,8 +2,12 @@ import React, { useLayoutEffect } from "react";
 
 import "./style.css";
 
+
+
 function SharedCard(props) {
+  // const {city, body, _id} = card; 
   console.log(props);
+  // only city & body here. no id 
 
   return (
     <div className="card">
