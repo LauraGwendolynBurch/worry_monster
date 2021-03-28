@@ -1,0 +1,12 @@
+canvas {
+	width: 100%;
+	height: 50%;
+}
+
+.monster {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	z-index: 0;
+    
+}

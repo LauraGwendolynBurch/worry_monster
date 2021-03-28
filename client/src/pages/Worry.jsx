@@ -3,6 +3,11 @@ import styles from "./Worry.module.css";
 import Editor from "../components/Add/Add";
 import Preview from "../components/Preview/Preview";
 import WorryAPI from "../utils/WorryApi";
+import Monster from "./Monster";
+import MonsterUse from "./MonsterUse";
+
+
+
 
 const Worry = (props) => {
 	const [cards, setCards] = useState({});
@@ -37,11 +42,13 @@ const Worry = (props) => {
 
 	const handleWorryDelete = (card) => {
 		console.log(card);
+		// MonsterUse();
 		setCards((cards) => {
 			const updated = { ...cards };
 			delete updated[card._id];
 			return updated;
 		});
+	
 
 		WorryAPI.deleteMyWorry(card._id);
 	};
@@ -60,6 +67,7 @@ const Worry = (props) => {
 		<section className={styles.worrypage}>
 			
 			<div className={styles.container}>
+			<MonsterUse/>
 				 <Editor
 					cards={cards}
 					onAdd={handleWorrySubmit}
