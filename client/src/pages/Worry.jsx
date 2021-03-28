@@ -3,17 +3,12 @@ import styles from "./Worry.module.css";
 import Editor from "../components/Add/Add";
 import Preview from "../components/Preview/Preview";
 import WorryAPI from "../utils/WorryApi";
+import HeaderContainer from "../components/HeaderContainer";
 
 const Worry = (props) => {
 	const [cards, setCards] = useState({});
-	// const [cardFormObject, setFormObject] = useState({
-	// 	city: "",
-	// 	body: "",
-
-	// });
 
 	useEffect(() => {
-		// getting all my worry from database
 		loadMyWorry();
 	}, []);
 
@@ -25,7 +20,6 @@ const Worry = (props) => {
 			}) //
 			.catch((err) => console.log(err));
 	};
-	// console.log(cards, "cards");
 
 	const handleWorrySubmit = (card) => {
 		setCards((cards) => {
@@ -58,6 +52,14 @@ const Worry = (props) => {
 
 	return (
 		<section className={styles.worrypage}>
+			<HeaderContainer />
+			<div className="card">
+				<div className="info">
+					<h2 className="city">WElcome to Wory Monster</h2>
+					<p className="body">instructions</p>
+				</div>
+			</div>
+
 			<div className={styles.container}>
 				<Editor
 					cards={cards}

@@ -10,7 +10,7 @@ const Footer = (props) => {
 					<span>github</span>
 				</a> */}
 
-				<h5> © 2021. pod 13 is working </h5>
+				<h5> © 2021 </h5>
 			</div>
 		</footer>
 	);
