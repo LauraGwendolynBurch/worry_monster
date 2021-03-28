@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAuthTokenStore, useIsAuthenticated } from "./utils/auth";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.module.css";
 import Main from "./pages/Main";
 import Monster from "./pages/Monster";
@@ -25,7 +25,7 @@ function App() {
 						<Route exact path="/" render={() =>{return <Main setLoginModal={setLoginModal} />}} />
 						
 						{isAuthenticated && <HeaderContainer />}
-						
+						{loginModal && <ModalContainer setLoginModal={setLoginModal} />}
 						<Route exact path="/Worry" component={isAuthenticated && Worry} />
 						<Route
 							exact
@@ -38,7 +38,7 @@ function App() {
 							component={isAuthenticated && Monster}
 						/>
 					</div>
-					{loginModal && <ModalContainer setLoginModal={setLoginModal} />}
+					
 				</div>
 			</Switch>
 		</BrowserRouter>
