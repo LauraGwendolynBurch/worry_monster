@@ -5,19 +5,17 @@ canvas {
 
 .monster {
 	position: absolute;
-    height: 20px !important;
+	height: 20px !important;
 
 	left: 25%;
-	/* top: 50%; */
+
 	z-index: 0;
-    
 }
 
 .monster-image {
-    position: absolute;
-    height: 100% !important;
-    z-index: 1;
-    left: 25%;
-    right: 50%;
-    
+	position: absolute;
+	height: 100% !important;
+	z-index: 1;
+	left: 25%;
+	right: 50%;
 }

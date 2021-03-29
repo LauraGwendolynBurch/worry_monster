@@ -4,11 +4,11 @@ import LogoBox from "../components/LogoBox/LogoBox";
 
 const Main = ({ setLoginModal, user }) => {
 	return (
-		<>
+		<div>
 			<LogoBox setLoginModal={setLoginModal} />
 
 			<Footer />
-		</>
+		</div>
 	);
 };
 

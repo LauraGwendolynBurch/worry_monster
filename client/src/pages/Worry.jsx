@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuthenticatedUser } from "../utils/auth";
-import { useAuthTokenStore, useIsAuthenticated } from "../utils/auth";
+import { useAuthTokenStore } from "../utils/auth";
 
 import styles from "./Worry.module.css";
 import Add from "../components/Add/Add";
@@ -24,7 +24,6 @@ const Worry = (props) => {
 	const loadMyWorry = () => {
 		WorryAPI.getMyWorry() //
 			.then((res) => {
-				console.log(res.data);
 				setCards(res.data);
 				setEditCards(res.data);
 				setOriginalArry(res.data);
@@ -38,43 +37,16 @@ const Worry = (props) => {
 		});
 	};
 
-	// const handleWorryDelete =  (card) => {
-	// 	console.log(card);
-	// 	 setTimeout(() => {
-	// 		setMonster(true);
-	// 	}, 3000);
-	// 	setMonster(false);
-
-	// 	// setCards((cards) => {
-	// 	// 	const updated = { ...cards };
-	// 	// 	delete updated[card._id];
-	// 	// 	return updated;
-	// 	// });
-
-	// 	 WorryAPI.deleteMyWorry(card._id);
-	// };
-
 	const handleWorryDelete = (card) => {
 		console.log(card);
-		setMonster(false); 
+		setMonster(false);
 		WorryAPI.deleteMyWorry(card._id);
 		setTimeout(() => {
 			setMonster(true);
-			window.location.reload()
-		}, 6000);
+			window.location.reload();
+		}, 4000);
 		setMonster(false);
-
-		// setCards((cards) => {
-		// 	const updated = { ...cards };
-		// 	delete updated[card._id];
-		// 	return updated;
-		// });
-
-		
 	};
-
-
-	
 
 	const handleWorryEdit = (card) => {
 		setCards((cards) => {
@@ -101,17 +73,17 @@ const Worry = (props) => {
 					</h3>
 				</div>
 			</div>
-			<img src={picture} hidden={monster} className="monster-image" />
+			<img
+				src={picture}
+				hidden={monster}
+				className="monster-image"
+				alt="mymonster"
+			/>
 
 			<div className={styles.container}>
 				<MonsterUse />
 
-				<Add
-					cards={cards}
-					onAdd={handleWorrySubmit}
-					// deleteCard={handleWorryDelete}
-					// onEdit={handleWorryEdit}
-				/>
+				<Add cards={cards} onAdd={handleWorrySubmit} />
 				<div className={styles.break}></div>
 				<Preview
 					cards={cards}
