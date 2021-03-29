@@ -3,12 +3,16 @@ import styles from "./Worry.module.css";
 import Editor from "../components/Add/Add";
 import Preview from "../components/Preview/Preview";
 import WorryAPI from "../utils/WorryApi";
-import HeaderContainer from "../components/HeaderContainer";
+import Monster from "./Monster";
+import MonsterUse from "./MonsterUse";
+import picture from "../images/monster-NBG.gif";
+
+
 
 
 const Worry = (props) => {
 	const [cards, setCards] = useState({});
-
+	const [monster, setMonster] = useState(true);
 	useEffect(() => {
 		loadMyWorry();
 	}, []);
@@ -33,11 +37,17 @@ const Worry = (props) => {
 
 	const handleWorryDelete = (card) => {
 		console.log(card);
+		setTimeout(() => {
+			setMonster(true);
+		},3000)
+		setMonster(false);
+		// MonsterUse();
 		setCards((cards) => {
 			const updated = { ...cards };
 			delete updated[card._id];
 			return updated;
 		});
+	
 
 		WorryAPI.deleteMyWorry(card._id);
 	};
@@ -53,16 +63,18 @@ const Worry = (props) => {
 
 	return (
 		<section className={styles.worrypage}>
-			<HeaderContainer />
+			{/* <HeaderContainer /> */}
 			<div className="card">
 				<div className="info">
 				<h3 className={styles.title}> Tell the Monster what is on your mind.</h3>
 				<h3 className={styles.title}>Be sure to include the city you are in.  Then decide if you want to feed the Worry Monster, or anonymously share with the community.  Either way the Monster takes care of you from here!  </h3>
 				</div>
 			</div>
+			<img src={picture} hidden={monster} className="monster-image"/>
 
 			<div className={styles.container}>
-				<Editor
+			<MonsterUse/>
+				 <Editor
 					cards={cards}
 					onAdd={handleWorrySubmit}
 					// deleteCard={handleWorryDelete}

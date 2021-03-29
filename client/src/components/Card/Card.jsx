@@ -38,7 +38,7 @@ const Card = ({ card, deleteCard, onEdit }) => {
 								)}
 							</div>
 							&nbsp;
-							<button onClick={onSubmit} className={styles.button}>
+							<button onClick={onSubmit} type="button" className={styles.button}>
 								Feed Worry to Monster
 							</button>
 						</div>
