@@ -9,17 +9,6 @@ const CardEditForm = ({ card, deleteCard }) => {
 	const bodyRef = useRef();
 
 	const { city, body } = card;
-	// const onChange = (event) => {
-	// 	if (event.currentTarget === null) {
-	// 		return;
-	// 	}
-	// 	event.preventDefault();
-
-	// 	onEdit({
-	// 		...card,
-	// 		[event.currentTarget.name]: event.currentTarget.value,
-	// 	});
-	// };
 
 	const onSubmit = (event) => {
 		event.preventDefault();
@@ -34,7 +23,7 @@ const CardEditForm = ({ card, deleteCard }) => {
 				type="text"
 				name="city"
 				value={city}
-				// onChange={onChange}
+				
 			/>
 
 			<textarea
@@ -42,11 +31,11 @@ const CardEditForm = ({ card, deleteCard }) => {
 				className={styles.textarea}
 				name="message"
 				value={body}
-				// onChange={onChange}
+				
 			></textarea>
 			<Button name="Edit" />
 			<Button name="Delete" onClick={onSubmit} />
-			{/* <Button name="Delete" onClick={onSubmit} /> */}
+			
 		</form>
 	);
 };

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import styles from "./MemberModalBox.module.css";
 import welcomeMon from "../../images/mon1.png";
 import SignUpForm from "../SignUpForm";

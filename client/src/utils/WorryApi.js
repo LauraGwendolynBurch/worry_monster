@@ -13,7 +13,6 @@ const WorryAPI = {
 	},
 	// getting all my worry
 	getMyWorry: function (userid) {
-		console.log(config);
 		return API.axios.get("/api/posts", config);
 	},
 	// req.body => body

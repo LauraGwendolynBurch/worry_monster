@@ -10,13 +10,9 @@ import { useAuthenticatedUser } from "./utils/auth";
 
 function App() {
 	useAuthTokenStore();
-
 	const isAuthenticated = useIsAuthenticated();
-	// const authenticatedUser = useAuthenticatedUser();
 	const [loginModal, setLoginModal] = useState(false);
-	// const [user, setUser] = useState(null);
 	const user = useAuthenticatedUser();
-	console.log(user, "user");
 
 	return (
 		<BrowserRouter>
@@ -38,7 +34,6 @@ function App() {
 							path="/SharedWorry"
 							component={isAuthenticated && SharedWorry}
 						/>
-						
 					</div>
 				</div>
 			</Switch>

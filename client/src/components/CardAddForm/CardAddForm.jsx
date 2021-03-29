@@ -23,8 +23,7 @@ const CardAddForm = ({ onAdd }) => {
 
 	return (
 		<div>
-			{/* <div className={styles.wrap}>
-				<h3 className={styles.h3}>I eat your worries and troubles... </h3> */}
+			
 			<form ref={formRef} className={styles.form} onSubmit={onSubmit}>
 				<input
 					ref={cityRef}
@@ -43,7 +42,7 @@ const CardAddForm = ({ onAdd }) => {
 
 				<Button name="Add" onClick={onSubmit} />
 			</form>
-			{/* </div> */}
+		
 		</div>
 	);
 };
