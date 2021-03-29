@@ -1,8 +1,7 @@
 import React, { useRef } from "react";
 import Button from "../Button/Button";
 import styles from "./CardAddForm.module.css";
-import swal from 'sweetalert';
-
+import swal from "sweetalert";
 
 const CardAddForm = ({ onAdd }) => {
 	const formRef = useRef();
@@ -32,14 +31,14 @@ const CardAddForm = ({ onAdd }) => {
 					className={styles.input}
 					type="text"
 					name="city"
-					placeholder="city"
+					placeholder="Where are you? Enter your City"
 				/>
 
 				<textarea
 					ref={bodyRef}
 					className={styles.textarea}
 					name="body"
-					placeholder="Worry"
+					placeholder="Write your worries and troubles for Worry Monster"
 				></textarea>
 
 				<Button name="Add" onClick={onSubmit} />

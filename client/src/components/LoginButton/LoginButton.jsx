@@ -25,8 +25,8 @@ const LoginButton = ({ setLoginModal, user }) => {
 					LOGOUT
 				</button>
 			) : (
-				<button className="btn-login" onClick={openLoginModal}>
-					LOGIN
+			<button className={styles.login} onClick={openLoginModal}>
+					start your worry monster
 				</button>
 			)}
 			{/* <button className="btn-logout"> logout</button> */}

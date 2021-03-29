@@ -7,7 +7,7 @@ const Nav = ({ setLoginModal, user }) => {
 	return (
 		<header className={styles.nav}>
 			<h1>
-				<Link className={styles.logo} to="/">
+				<Link className={styles.logo} to="/Worry">
 					{/* <img className={styles.logo} src={Shape1} alt="worrymonster logo" /> */}
 					worry monster
 				</Link>
