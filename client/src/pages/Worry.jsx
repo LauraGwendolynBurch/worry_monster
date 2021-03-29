@@ -3,9 +3,9 @@ import styles from "./Worry.module.css";
 import Editor from "../components/Add/Add";
 import Preview from "../components/Preview/Preview";
 import WorryAPI from "../utils/WorryApi";
-import Monster from "./Monster";
 import MonsterUse from "./MonsterUse";
 import picture from "../images/monster-NBG.gif";
+import HeaderContainer from "../components/HeaderContainer"
 
 
 
@@ -63,7 +63,7 @@ const Worry = (props) => {
 
 	return (
 		<section className={styles.worrypage}>
-			{/* <HeaderContainer /> */}
+			 <HeaderContainer /> 
 			<div className="card">
 				<div className="info">
 				<h3 className={styles.title}> Tell the Monster what is on your mind.</h3>
