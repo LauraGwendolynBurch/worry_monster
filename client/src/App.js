@@ -1,16 +1,12 @@
 import React, { useState } from "react";
-import {
-	useAuthTokenStore,
-	useIsAuthenticated,
-} from "./utils/auth";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { useAuthTokenStore, useIsAuthenticated } from "./utils/auth";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.module.css";
 import Main from "./pages/Main";
 import Monster from "./pages/Monster";
 import SharedWorry from "./pages/SharedWorry";
 import Worry from "./pages/Worry";
-import ModalContainer from './components/ModalContainer'
-import HeaderContainer from "./components/HeaderContainer";
+import ModalContainer from "./components/ModalContainer";
 
 
 function App() {
@@ -22,19 +18,26 @@ function App() {
 	// const [user, setUser] = useState(null);
 
 	return (
-		
 		<BrowserRouter>
 			<Switch>
-				<div className="App">
+				<div>
 					<div>
-						{!isAuthenticated && <Main setLoginModal={setLoginModal} />}
-						{isAuthenticated && <HeaderContainer />}
-					<Route exact path="/" component={Main} />
-					<Route exact path="/Worry" component={isAuthenticated && Worry} />
-					<Route exact path="/SharedWorry" component={isAuthenticated && SharedWorry} />
-					<Route exact path="/Monster" component={isAuthenticated && Monster} />
-					</div>
+						<Route exact path="/" render={() =>{return <Main setLoginModal={setLoginModal} />}} />
+						
 						{loginModal && <ModalContainer setLoginModal={setLoginModal} />}
+						<Route exact path="/Worry" component={isAuthenticated && Worry} />
+						<Route
+							exact
+							path="/SharedWorry"
+							component={isAuthenticated && SharedWorry}
+						/>
+						<Route
+							exact
+							path="/Monster"
+							component={isAuthenticated && Monster}
+						/>
+					</div>
+					
 				</div>
 			</Switch>
 		</BrowserRouter>

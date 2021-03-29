@@ -1,29 +1,29 @@
 const router = require("express").Router();
 const db = require("../../models");
-const checkAuth = require("../middleware/checkauth");
+const authenticatedUser = require("../middleware/authenticateUser")
 const ObjectId = require("mongoose").Types.ObjectId;
 //current user's worry
 
-router.get("/api/posts", checkAuth, (req, res) => {
+router.get("/api/posts", authenticatedUser, (req, res) => {
   // console.log(req.params.userid);
   console.log("userdata", req.userData);
   //not sending userid in url/ userid should be protected
-  db.Post.find({ user: req.userData.id })
+  db.Post.find({ user: req.user._id })
     .then((dbModel) => res.json(dbModel))
     .catch((err) => res.status(422).json(err));
 });
 
 //eveyone's worry - all is all worries that are shared
-router.get("/api/posts/all", checkAuth, (req, res) => {
+router.get("/api/posts/all", authenticatedUser, (req, res) => {
   db.Post.find({share: true})
     .then((dbModel) => res.json(dbModel))
     .catch((err) => res.status(422).json(err));
 });
 
-router.post("/api/posts", checkAuth, (req, res) => {
+router.post("/api/posts", authenticatedUser, (req, res) => {
   console.log(req.userData);
 
-  req.body.user = req.userData.id;
+  req.body.user = req.user._id;
   //using id from cookie
   // userid should not be on URL
   //req.body.user => for recognizing who added the post

@@ -1,4 +1,6 @@
 import axios from "axios";
+import API from "./API";
+
 let config = {
 	headers: {
 		Authorization: `${localStorage.getItem("jwtToken")}`,
@@ -7,23 +9,23 @@ let config = {
 const WorryAPI = {
 	// getting all post from every user
 	getAllWorry: function () {
-		return axios.get("/api/posts/all", config);
+		return API.axios.get("/api/posts/all", config);
 	},
 	// getting all my worry
 	getMyWorry: function (userid) {
 		console.log(config);
-		return axios.get("/api/posts", config);
+		return API.axios.get("/api/posts", config);
 	},
 	// req.body => body
 	createMyWorry: function (body) {
-		return axios.post("/api/posts", body, config);
+		return API.axios.post("/api/posts", body, config);
 	},
 
 	updateMyWorry: function (postid) {
-		return axios.put("/api/posts/" + postid, config);
+		return API.axios.put("/api/posts/" + postid, config);
 	},
 	deleteMyWorry: function (postid) {
-		return axios.delete("/api/posts/" + postid, config);
+		return API.axios.delete("/api/posts/" + postid, config);
 	},
 };
 

@@ -1,12 +1,23 @@
 canvas {
 	width: 100%;
-	height: 50%;
+	height: 100%;
 }
 
 .monster {
 	position: absolute;
-	left: 0;
-	top: 50%;
+    height: 20px !important;
+
+	left: 25%;
+	/* top: 50%; */
 	z-index: 0;
+    
+}
+
+.monster-image {
+    position: absolute;
+    height: 100% !important;
+    z-index: 1;
+    left: 25%;
+    right: 50%;
     
 }

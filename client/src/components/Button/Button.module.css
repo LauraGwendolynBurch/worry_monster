@@ -1,4 +1,4 @@
-.button {
+/* .button {
 	background-color: lightgray;
 	color: white;
 	font-weight: bold;
@@ -11,4 +11,6 @@
 
 .button:hover {
 	opacity: 0.8;
-}
+} */
+
+.button{background-color:#d3d3d3;color:#fff;font-weight:700;cursor:pointer;padding:.5em;flex:1 1 50%;font-size:.8rem;opacity:.8}.button:hover{opacity:.8}

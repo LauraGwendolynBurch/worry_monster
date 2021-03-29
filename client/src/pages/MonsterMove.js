@@ -5,15 +5,15 @@ import UseCanvas from "./UseCanvas";
 
 
 export class MonsterMove {
-	constructor() {
+	// constructor() {
 		
-		this.canvas = document.querySelector(".monster");
+	// 	this.canvas = document.querySelector(".monster");
 		
-		this.ctx = this.canvas.getContext("2d");
-        this.image = new Image();
-        this.image.src = this.monster.IMAGE;
-        // this.image.addEventListener("load", render(), false);//set on button click
-    }
+	// 	this.ctx = this.canvas.getContext("2d");
+    //     this.image = new Image();
+    //     this.image.src = this.monster.IMAGE;
+    //     // this.image.addEventListener("load", render(), false);//set on button click
+    // }
         // canvas={canvas}
         // ctx={ }//context
         //image={monsterImage (scr="./monster-NGB.gif");
@@ -85,7 +85,8 @@ export class MonsterMove {
     }
 
         animate() {
-            const setTimeoutVar = setTimeout(
+
+            var setTimeoutVar = setTimeout(
                 
             //Set a timer to call updateAnimation every 33 milliseconds - approx. 30FPS
             setTimeoutVar = setTimeout(this.animate, 33));
@@ -107,4 +108,4 @@ export class MonsterMove {
   
 }
 
-
+export default MonsterMove;

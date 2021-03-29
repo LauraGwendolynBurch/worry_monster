@@ -5,29 +5,23 @@ import Preview from "../components/Preview/Preview";
 import WorryAPI from "../utils/WorryApi";
 import Monster from "./Monster";
 import MonsterUse from "./MonsterUse";
-
+import picture from "../images/monster-NBG.gif";
 
 
 
 const Worry = (props) => {
 	const [cards, setCards] = useState({});
-	// const [cardFormObject, setFormObject] = useState({
-	// 	city: "",
-	// 	body: "",
-
-	// });
-	
-
+	const [monster, setMonster] = useState(true);
 	useEffect(() => {
-		// getting all my worry from database
 		loadMyWorry();
 	}, []);
 
 	const loadMyWorry = () => {
 		WorryAPI.getMyWorry() //
 			.then((res) => {
-				console.log(res.data)
-				setCards(res.data)}) //
+				console.log(res.data);
+				setCards(res.data);
+			}) //
 			.catch((err) => console.log(err));
 	};
 
@@ -42,6 +36,10 @@ const Worry = (props) => {
 
 	const handleWorryDelete = (card) => {
 		console.log(card);
+		setTimeout(() => {
+			setMonster(true);
+		},3000)
+		setMonster(false);
 		// MonsterUse();
 		setCards((cards) => {
 			const updated = { ...cards };
@@ -63,9 +61,16 @@ const Worry = (props) => {
 	};
 
 	return (
-	
 		<section className={styles.worrypage}>
-			
+			{/* <HeaderContainer /> */}
+			<div className="card">
+				<div className="info">
+					<h2 className="city">WElcome to Wory Monster</h2>
+					<p className="body">instructions</p>
+				</div>
+			</div>
+			<img src={picture} hidden={monster} className="monster-image"/>
+
 			<div className={styles.container}>
 			<MonsterUse/>
 				 <Editor
@@ -73,9 +78,8 @@ const Worry = (props) => {
 					onAdd={handleWorrySubmit}
 					// deleteCard={handleWorryDelete}
 					// onEdit={handleWorryEdit}
-				/> 
+				/>
 				<Preview
-				
 					cards={cards}
 					// onAdd={handleWorrySubmit}
 					deleteCard={handleWorryDelete}
