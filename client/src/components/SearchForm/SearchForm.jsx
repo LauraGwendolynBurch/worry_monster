@@ -6,13 +6,16 @@ const SearchForm = (props) => {
 		<div>
 			<div className={styles.container}>
 				<form className={styles.form}>
-					<input
-						type="text"
-						className={styles.input}
-						onChange={props.handleInputChange}
-						value={props.searchState}
-					/>
-					{/* <button className={styles.btn}>search button</button> */}
+					<div className={styles.input}>
+						<input
+							type="text"
+							onChange={props.handleInputChange}
+							value={props.searchState}
+							placeholder="Type in city here"
+						/>
+					</div>
+
+					
 				</form>
 			</div>
 		</div>

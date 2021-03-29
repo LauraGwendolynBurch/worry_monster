@@ -1,62 +1,57 @@
 .card {
-	width: 100%;
-	display: flex;
+	/* width: 100%; */
+	/* display: flex; */
 	align-items: center;
 	margin-bottom: 0.5em;
 	border-radius: 1em;
 	background-color: rgba(255, 255, 255, 0.1);
 	opacity: 0.5;
-
-	max-width: 30rem;
+	width: 40rem;
 	backdrop-filter: blur(5px);
 	box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
 	border-right: 1px solid rgba(255, 255, 255, 0.2);
 	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	list-style-type: none;
+	text-align: center;
+	padding: 20px;
 }
 
-.info {
+/* .info {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-}
+} */
 
 .city,
-.time,
 .body {
 	margin: 0;
 	font-size: 1.2rem;
-	margin-bottom: 0.2em;
+	margin-bottom: 1em;
 }
 
 .city {
 	font-size: 0.8rem;
 	padding-top: 1em;
 }
-/* .time {
-	margin-bottom: 1em;
-}
-.time::after {
-	content: "";
-	display: block;
-	width: 90%;
-	height: 2px;
-	background-color: makerWheat;
-	transform: translateY(0.5em);
-} */
+
 .buttons {
-	display: inline-block;
+	/* flex-direction: row;
+	justify-content: space-between; */
+	margin: 20px;
+	padding: 20px;
 }
 
 .button {
 	background: #fff;
-	/* color: #666; */
-	max-width: 100px;
+	width: 40%;
 	cursor: pointer;
-	margin-bottom: 1.5em;
+
+	margin: 20px;
 	font-weight: 600;
 	padding: 0.5em 0.5em;
+
 	border-radius: 35px;
 	border: 1px solid rgba(255, 255, 255, 0.5);
 	border-right: 1px solid rgba(255, 255, 255, 0.2);

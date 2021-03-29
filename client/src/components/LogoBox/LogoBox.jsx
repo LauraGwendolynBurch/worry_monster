@@ -2,12 +2,7 @@ import React from "react";
 import styles from "./LogoBox.module.css";
 import LoginButton from "../LoginButton/LoginButton";
 
-const LogoBox = ( { setLoginModal} ) => {
-
-
-	
-
-
+const LogoBox = ({ setLoginModal }) => {
 	return (
 		<section className={styles.container}>
 			<div>
@@ -18,14 +13,16 @@ const LogoBox = ( { setLoginModal} ) => {
 					<h2>
 						W<span>O</span>RRY M<span>O</span>NSTER
 					</h2>
-					<p className={styles.desc}>
-						hi, there. I eat your worries and troubles, so you can let them
-						go...
+				</div>
+				<div className={styles.p}>
+					<p className={styles.intro}>
+						{" "}
+						Hi, I eat your worries and troubles, so you can let them go...
 					</p>
-					<div className="btnbox">
-						<LoginButton setLoginModal={setLoginModal}></LoginButton>
-			
-					</div>
+				</div>
+
+				<div className="btnbox">
+					<LoginButton setLoginModal={setLoginModal}></LoginButton>
 				</div>
 			</div>
 		</section>
@@ -33,4 +30,3 @@ const LogoBox = ( { setLoginModal} ) => {
 };
 
 export default LogoBox;
-

@@ -2,21 +2,10 @@ import React from "react";
 import CardAddForm from "../CardAddForm/CardAddForm";
 import style from "./Add.module.css";
 
-const Editor = ({ cards, onAdd }) => (
-
-	
-	<section className={style.editor}>	
-	
-		
-		
+const Add = ({ cards, onAdd }) => (
+	<section className={style.editor}>
 		<CardAddForm onAdd={onAdd} />
 	</section>
-	
 );
 
-
-
-
-
-
-	export default Editor;
+export default Add;
