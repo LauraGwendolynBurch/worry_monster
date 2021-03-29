@@ -4,17 +4,16 @@ import "./index.css";
 import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import { StoreProvider } from "./store";
-import "@fortawesome/fontawesome-free/js/all.js";
-import UseCanvas from "../src/pages/UseCanvas"
+import UseCanvas from "../src/pages/UseCanvas";
 
-ReactDOM.render(<>
-	<UseCanvas/>
-	<StoreProvider>
-		<App />
-	</StoreProvider>
+ReactDOM.render(
+	<>
+		{/* <UseCanvas /> */}
+		<StoreProvider>
+			<App />
+		</StoreProvider>
 	</>,
 
 	document.getElementById("root")
-	
 );
 registerServiceWorker();

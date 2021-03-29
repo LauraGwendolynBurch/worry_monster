@@ -1,10 +1,11 @@
 .container {
 	position: relative;
+	width: 100%;
 	height: 38rem;
 	padding-top: 5rem;
-	/* background: linear-gradient(180deg, #142a77 0%, #6047a5 47.5%, #bc88ff 100%); */
-	color: #fff;
-	/* color: black; */
+	background: linear-gradient(180deg, #142a77 0%, #6047a5 47.5%, #bc88ff 100%);
+	/* color: #fff; */
+	color: black;
 	z-index: 0;
 	display: flex;
 	flex-direction: column;
@@ -74,5 +75,53 @@
 			99% 26%,
 			100% 0%
 		);
+	}
+}
+
+.intro {
+	position: relative;
+	top: 50%;
+	/* width: 24em; */
+	margin-top: 1.5rem;
+	margin-bottom: 2rem;
+	color: rgba(248, 247, 247, 0.75);
+	border-right: 2px solid rgba(22, 22, 22, 0.75);
+	white-space: nowrap;
+	overflow: hidden;
+	transform: translateY(-50%);
+	animation: typewriter 4s steps(40) 1s 1 normal both,
+		blink 500ms steps(40) infinite normal;
+}
+
+@keyframes typewriter {
+	from {
+		width: 0;
+	}
+	to {
+		width: 28em;
+	}
+}
+@keyframes blink {
+	from {
+		border-right-color: rgba(22, 22, 22, 0.75);
+	}
+	to {
+		border-right-color: transparent;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.titleBox {
+		text-align: center;
+	}
+	.titleBox h2 {
+		/* position: absolute;
+		transform: translateY(-80%); */
+		font-size: 3rem;
+	}
+	.p {
+		text-align: center;
+		display: flex;
+		animation: none;
 	}
 }
