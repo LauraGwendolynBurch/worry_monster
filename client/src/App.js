@@ -3,7 +3,6 @@ import { useAuthTokenStore, useIsAuthenticated } from "./utils/auth";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.module.css";
 import Main from "./pages/Main";
-import Monster from "./pages/Monster";
 import SharedWorry from "./pages/SharedWorry";
 import Worry from "./pages/Worry";
 import ModalContainer from "./components/ModalContainer";
@@ -31,11 +30,7 @@ function App() {
 							path="/SharedWorry"
 							component={isAuthenticated && SharedWorry}
 						/>
-						<Route
-							exact
-							path="/Monster"
-							component={isAuthenticated && Monster}
-						/>
+						
 					</div>
 					
 				</div>

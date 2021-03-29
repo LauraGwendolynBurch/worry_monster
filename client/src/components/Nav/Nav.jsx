@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Nav.module.css";
-import { Link, Switch } from "react-router-dom";
-import Shape1 from "../../images/Shape1.svg";
+import { Link } from "react-router-dom";
 import LogoutButton from "../LogoutBtn/LogoutBtn.js";
 
 const Nav = ({ setLoginModal, user }) => {
@@ -23,11 +22,6 @@ const Nav = ({ setLoginModal, user }) => {
 				<li className={styles.li}>
 					<Link className={styles.link} to="/SharedWorry">
 						<h5 className={styles.h5}>Shared Worries</h5>
-					</Link>
-				</li>
-				<li className={styles.li}>
-					<Link className={styles.link} to="/Monster">
-						<h5 className={styles.h5}>Monster</h5>
 					</Link>
 				</li>
 				<li className={styles.li}>
