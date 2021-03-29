@@ -13,10 +13,6 @@ const LogoBox = ({ setLoginModal }) => {
 					<h2>
 						W<span>O</span>RRY M<span>O</span>NSTER
 					</h2>
-
-					{/* <div className="btnbox"> */}
-					{/* <LoginButton setLoginModal={setLoginModal}></LoginButton> */}
-					{/* </div> */}
 				</div>
 				<div className={styles.p}>
 					<p className={styles.intro}>

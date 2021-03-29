@@ -1,15 +1,8 @@
 import React from "react";
-import HeaderContainer from "../components/HeaderContainer";
+import "./Monster.css";
 
 const Monster = (props) => {
-	return (
-		<div>
-			<HeaderContainer />
-			<div>
-				<h2>monster page</h2>
-			</div>
-		</div>
-	);
+	return <canvas className="monster" id="monster" hidden={true}></canvas>;
 };
 
 export default Monster;
