@@ -9,24 +9,10 @@ const Card = ({ card, deleteCard, updateCard }) => {
 
 	const [redirectLink, setRedirectLink] = useState({ redirect: null });
 
-	const onSubmit = (event) => {
+	const onSubmit = async (event) => {
+		event.preventDefault();
 		deleteCard(card);
 	};
-
-	// const onShare = async (e) => {
-	// 	e.preventDefault();
-	// 	// await WorryAPI.updateMyWorry(e.target.id);
-	// 	const { _id: key } = e.target;
-	// 	const { value } = e.target;
-	// 	await updateCard({
-	// 		...card,
-	// 		share: true,
-	// 		[key]: value,
-	// 	});
-	// 	//call api with id await
-	// 	console.log("button id: ", e.target);
-	// 	// await setRedirectLink({ redirect: "/SharedWorry" });
-	// };
 
 	const onShare = async (e) => {
 		e.preventDefault();

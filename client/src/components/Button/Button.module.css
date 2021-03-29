@@ -1,32 +1,11 @@
-/* .button {
-	background-color: lightgray;
-	color: white;
-	font-weight: bold;
-	cursor: pointer;
-	padding: 0.5em;
-	flex: 1 1 50%;
-	font-size: 0.8rem;
-	opacity: 0.8;
-}
-
-.button:hover {
-	opacity: 0.8;
-} */
-
 .button {
 	padding: 0.5em;
-
 	font-size: 1rem;
 	opacity: 0.8;
-
-	/* background: #fff; */
 	width: 100%;
 	cursor: pointer;
-
 	margin: 20px;
-	/* font-weight: 600; */
 	padding: 0.5em 0.5em;
-
 	border-radius: 35px;
 	border: 1px solid rgba(255, 255, 255, 0.5);
 	border-right: 1px solid rgba(255, 255, 255, 0.2);

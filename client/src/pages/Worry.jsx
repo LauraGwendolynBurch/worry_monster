@@ -56,9 +56,12 @@ const Worry = (props) => {
 
 	const handleWorryDelete = (card) => {
 		console.log(card);
+		setMonster(false); 
+		WorryAPI.deleteMyWorry(card._id);
 		setTimeout(() => {
 			setMonster(true);
-		}, 3000);
+			window.location.reload()
+		}, 6000);
 		setMonster(false);
 
 		// setCards((cards) => {
@@ -67,11 +70,11 @@ const Worry = (props) => {
 		// 	return updated;
 		// });
 
-		 WorryAPI.deleteMyWorry(card._id);
+		
 	};
 
 
-
+	
 
 	const handleWorryEdit = (card) => {
 		setCards((cards) => {

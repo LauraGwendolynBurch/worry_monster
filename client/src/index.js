@@ -8,7 +8,7 @@ import UseCanvas from "../src/pages/UseCanvas";
 
 ReactDOM.render(
 	<>
-		{/* <UseCanvas /> */}
+		<UseCanvas />
 		<StoreProvider>
 			<App />
 		</StoreProvider>

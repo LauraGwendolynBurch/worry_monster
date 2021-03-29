@@ -15,7 +15,7 @@ const SearchForm = (props) => {
 						/>
 					</div>
 
-					{/* <button className={styles.btn}>search button</button> */}
+					
 				</form>
 			</div>
 		</div>
