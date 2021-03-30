@@ -9,6 +9,7 @@ Welcome to the Worry Monster!
 * [Requirements](#requirements)
 * [Future-Development](#future-development)
 * [Links](#links)
+* [Video](#video)
 * [Contributors](#contributors)
 
 
@@ -22,13 +23,21 @@ Welcome to the Worry Monster. Create an account and start journalling your worri
     - IF eaten the worry is delete
     - IF shared, the worry is then shared to a community page
     
-# Requirments 
+# Requirements 
     - Axios
     - Express
     - Jwt_decode
     - Sweetalert
 # Future-Development
 What we see for the future of The Worry Monster would be expanding into having different age groups for the ability for kids from elementary school to high school to have access. Possible searchable worries. We also see in the future of this app is expanding the ser profile and making it more customizable. The adding of more monsters that would be associated with everything from age group to location is something that we hope to add in the future. 
+
+# Video
+  ![screenshot](client/src/images/AppGIf.gif)
+
+    
+
+
+
 # Links
 - Heroku link: https://worry-monster.herokuapp.com/
 - Github:https://github.com/LauraGwendolynBurch/worry_monster
